@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 header {
   height: 75px;
   width: 100%;
@@ -84,7 +84,7 @@ footer ul {
 footer .menufooter a {
   color: white;
   font-family: Inter, sans-serif;
-  font-size: 14px;
+  font-size: 0.875rem;
   text-decoration: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -123,10 +123,259 @@ footer a p {
 }
 footer p {
   font-family: Inter, sans-serif;
-  font-size: 12px;
+  font-size: 0.75rem;
   margin: 0;
   color: #535353;
 }
 footer .legalrights {
   width: 180px;
+}
+
+.hero-image {
+  width: 100%;
+  min-height: calc(100vh - 75px);
+  background-image: url("/src/assets/images/wine-grapes.jpg");
+  background-size: 250%;
+  background-position: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  color: white;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.hero-image h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+.hero-image p {
+  font-family: Beau Rivage, serif;
+  font-size: 1.5rem;
+  margin: 0;
+}
+.hero-image .title {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+.hero-image .scroll-down {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  color: white;
+  text-decoration: none;
+  gap: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.hero-image .scroll-down p {
+  font-family: Inter, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 200;
+  margin: 0px;
+}
+
+.quote {
+  padding: 80px 20px;
+}
+.quote p {
+  font-family: Inter, sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
+  font-style: italic;
+}
+.quote p:nth-child(2) {
+  font-size: 1rem;
+  color: #8a8180;
+}
+
+.oftheweek {
+  text-align: center;
+  padding: 0px 0px;
+}
+.oftheweek h4 {
+  font-family: Inter, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 0;
+  color: #942A50;
+  padding-bottom: 8px;
+}
+.oftheweek h2 {
+  font-family: Inter, sans-serif;
+  font-size: 2rem;
+  font-weight: 500;
+  margin: 0;
+}
+.oftheweek .galery-wines {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 50px 30px 50px 30px;
+  gap: 20px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.oftheweek .galery-wines .wine {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  padding: 0 10px;
+}
+.oftheweek .galery-wines .wine span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 1px;
+  background-color: #8a8180;
+}
+.oftheweek .galery-wines .wine img {
+  height: 200px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.oftheweek .galery-wines .wine p {
+  margin: 0;
+  font-family: Inter, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+.oftheweek .img-quinta {
+  overflow: hidden;
+}
+.oftheweek .img-quinta .image-divider {
+  width: 100%;
+  height: 505px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.explore {
+  padding: 80px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 64px;
+}
+.explore .article {
+  font-family: Inter, sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 24px;
+}
+.explore .article img {
+  width: 100%;
+  height: 280px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.explore .article h4 {
+  font-size: 1rem;
+  color: #8a8180;
+  font-weight: 400;
+  margin: 0;
+}
+.explore .article h3 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin: 0;
+}
+.explore .article p {
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+.explore .article button {
+  margin-top: 8px;
+  font-family: Inter, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  padding: 12px 28px;
+  background-color: black;
+  color: white;
+  border: none;
+}
+
+.wine-shop img {
+  width: 100%;
+  height: 325px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.wine-shop .shop-text {
+  text-align: center;
+  padding: 56px 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 24px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.wine-shop .shop-text h2 {
+  font-family: playfair Display, serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin: 0;
+}
+.wine-shop .shop-text p {
+  font-family: Inter, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  margin: 0;
+}
+.wine-shop .shop-text button {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-top: 8px;
+  font-family: Inter, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  padding: 12px 28px;
+  background-color: black;
+  color: white;
+  border: none;
 }

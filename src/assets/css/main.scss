@@ -3,5 +3,236 @@
     "partials/content",
     "partials/footer";
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
+
+.hero-image{
+    width: 100%;
+    min-height: calc(100vh - 75px);
+    background-image: url('/src/assets/images/wine-grapes.jpg');
+    background-size: 250%;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    justify-content: center;
+
+   h1{
+    font-size: 3rem;
+    margin: 0;
+   } 
+   p{
+    font-family: Beau Rivage, serif;
+    font-size: 1.5rem;
+    margin: 0;
+   }
+
+   .title {
+    align-self: center;
+   }
+
+   .scroll-down {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    text-decoration: none;
+    gap: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    p{
+        font-family: Inter, sans-serif;
+        font-size: 0.875rem;
+        font-weight: 200;
+        margin: 0px;
+    }
+
+   }
+
+}
+
+.quote {
+    padding: 80px 20px;
+
+    p{
+        font-family: Inter, sans-serif;
+        font-size: 1.5rem;
+        text-align: center;
+        font-style: italic;
+    }
+
+    p:nth-child(2) {
+        font-size: 1rem;
+        color: #8a8180;
+    }
+
+}
+
+.oftheweek{
+    text-align: center;
+    padding: 0px 0px;
+
+    h4{
+        font-family: Inter, sans-serif;
+        font-size: 1rem;
+        font-weight: 400;
+        margin: 0;
+        color: #942A50;
+        padding-bottom: 8px;
+    }
+
+    h2{
+        font-family: Inter, sans-serif;
+        font-size: 2rem;
+        font-weight: 500;
+        margin: 0;
+    }
+
+    .galery-wines{
+        display: flex;
+        padding: 50px 30px 50px 30px;
+        gap: 20px;
+        justify-content: center;
+
+        .wine{
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            width: 100%;
+            padding: 0 10px;
+
+
+            span {
+                display: flex;
+                height: 1px;
+                background-color: #8a8180;
+            }
+
+            img{
+                height: 200px;
+                object-fit: contain;
+            }
+
+            p{
+                margin: 0;
+                font-family: Inter, sans-serif;
+                font-size: 0.75rem;
+                font-weight: 400;
+            }
+        }
+    }
+
+    .img-quinta{
+        overflow: hidden;
+
+        .image-divider {
+        width: 100%;
+        height: 505px;
+        object-fit: cover;
+        transform: scale(1.2);
+    }
+
+    }
+}
+
+.explore {
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 64px;
+
+    .article{
+        font-family: Inter, sans-serif;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        img{
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+
+        }
+
+        h4 {
+            font-size: 1rem;
+            color: #8a8180;
+            font-weight: 400; 
+            margin: 0;
+        }
+
+        h3{
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        p{
+            font-size: 0.875rem;
+            font-weight: 400;
+        }
+
+        button {
+            margin-top: 8px;
+            font-family: Inter, sans-serif;
+            font-size: 0.875rem;
+            font-weight: 400;
+            padding: 12px 28px;
+            background-color: black;
+            color: white;
+            border: none;
+        }
+
+    }
+}
+
+.wine-shop{
+
+    img{
+        width: 100%;
+        height: 325px;
+        object-fit: cover;
+    }
+
+    .shop-text{
+        text-align: center;
+        padding: 56px 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        align-items: center;
+
+        h2{
+            font-family: playfair Display, serif;
+            font-size: 2.5rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        p{
+            font-family: Inter, sans-serif;
+            font-size: 0.875rem;
+            font-weight: 400;
+            margin: 0;
+        }
+
+        button{
+            width: fit-content;
+            margin-top: 8px;
+            font-family: Inter, sans-serif;
+            font-size: 0.875rem;
+            font-weight: 400;
+            padding: 12px 28px;
+            background-color: black;
+            color: white;
+            border: none;
+        }
+    }
+}
