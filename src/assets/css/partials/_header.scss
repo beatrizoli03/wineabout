@@ -1,0 +1,28 @@
+header {
+    height: 75px;
+    width: 100%;
+    background-color: white;
+    padding: 0px 20px;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #dddddd;
+
+    .hamburger {
+        width: 20px;
+        height: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+
+        span {
+            display: block;
+            height: 3px;
+            background-color: black;
+            border-radius: 2px;
+        }
+    }
+}
+
