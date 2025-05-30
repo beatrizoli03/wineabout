@@ -17,9 +17,22 @@ header {
           align-items: center;
   border-bottom: 1px solid #dddddd;
 }
-header .hamburger {
-  width: 20px;
-  height: 16px;
+header h3 a {
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+  font-weight: 900;
+}
+
+/*--off-screen-menu---*/
+.off-screen-menu {
+  background-color: white;
+  height: 100vh;
+  width: 100%;
+  max-width: 300px;
+  position: fixed;
+  top: 0;
+  right: -450px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -27,16 +40,83 @@ header .hamburger {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.5rem;
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.off-screen-menu li {
+  list-style-type: none;
+  margin: 1rem 0;
+}
+
+.off-screen-menu a {
+  color: black;
+  text-decoration: none;
+}
+
+.off-screen-menu.active {
+  right: 0;
+}
+
+/*---ham-menu---*/
+.ham-menu {
+  position: relative;
+  width: 30px;
+  height: 20px;
+  margin-left: auto;
   cursor: pointer;
 }
-header .hamburger span {
-  display: block;
-  height: 3px;
+
+.ham-menu span {
+  width: 100%;
+  height: 2px;
   background-color: black;
-  border-radius: 2px;
+  border-radius: 25px;
+  position: absolute;
+  left: 0;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.ham-menu span:nth-child(1) {
+  top: 2%;
+}
+
+.ham-menu span:nth-child(2) {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.ham-menu span:nth-child(3) {
+  top: 98%;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+
+.ham-menu.active span:nth-child(1) {
+  top: 50%;
+  -webkit-transform: translateY(-50%) rotate(45deg);
+          transform: translateY(-50%) rotate(45deg);
+}
+
+.ham-menu.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.ham-menu.active span:nth-child(3) {
+  top: 50%;
+  -webkit-transform: translateY(-50%) rotate(-45deg);
+          transform: translateY(-50%) rotate(-45deg);
 }
 
 body {
@@ -44,9 +124,85 @@ body {
   margin: 0;
 }
 body .logo {
-  font-family: Playfair Display, serif;
+  font-family: "Playfair Display", serif;
+  font-size: 1.25rem;
   font-weight: 900;
-  font-size: 20px;
+  margin: 0;
+}
+
+.logo {
+  font-family: "Playfair Display", serif;
+  font-size: 1.25rem;
+  font-weight: 900;
+  margin: 0;
+}
+
+h1 {
+  font-family: "Inter", sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  margin: 0;
+}
+h1.logo {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  font-weight: 900;
+  margin: 0;
+}
+h1.shop {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+h2 {
+  font-family: "Inter", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+h3 {
+  font-family: "Beau Rivage", serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+h4 {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 0;
+  color: #942A50;
+}
+
+p {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 130%;
+  margin: 0;
+  color: black;
+}
+
+.quote p {
+  font-family: "Inter", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 130%;
+  margin: 0;
+  color: black;
+  font-style: italic;
+}
+.quote p.author {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 130%;
+  margin: 0;
+  color: #8a8180;
 }
 
 footer {
@@ -131,7 +287,7 @@ footer .legalrights {
   width: 180px;
 }
 
-.hero-image {
+main .hero-image {
   width: 100%;
   min-height: calc(100vh - 75px);
   background-image: url("/src/assets/images/wine-grapes.jpg");
@@ -150,21 +306,12 @@ footer .legalrights {
       -ms-flex-pack: center;
           justify-content: center;
 }
-.hero-image h1 {
-  font-size: 3rem;
-  margin: 0;
-}
-.hero-image p {
-  font-family: Beau Rivage, serif;
-  font-size: 1.5rem;
-  margin: 0;
-}
-.hero-image .title {
+main .hero-image div:nth-child(1) {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
 }
-.hero-image .scroll-down {
+main .hero-image div:nth-child(2) {
   position: absolute;
   bottom: 24px;
   left: 50%;
@@ -184,46 +331,29 @@ footer .legalrights {
       -ms-flex-align: center;
           align-items: center;
 }
-.hero-image .scroll-down p {
-  font-family: Inter, sans-serif;
-  font-size: 0.875rem;
-  font-weight: 200;
-  margin: 0px;
+main .hero-image div:nth-child(2) p {
+  color: white;
 }
-
-.quote {
-  padding: 80px 20px;
-}
-.quote p {
-  font-family: Inter, sans-serif;
-  font-size: 1.5rem;
+main .quote {
+  padding: 80px 50px;
   text-align: center;
-  font-style: italic;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  gap: 16px;
 }
-.quote p:nth-child(2) {
-  font-size: 1rem;
-  color: #8a8180;
-}
-
-.oftheweek {
+main .oftheweek {
   text-align: center;
   padding: 0px 0px;
 }
-.oftheweek h4 {
-  font-family: Inter, sans-serif;
-  font-size: 1rem;
-  font-weight: 400;
-  margin: 0;
-  color: #942A50;
-  padding-bottom: 8px;
-}
-.oftheweek h2 {
-  font-family: Inter, sans-serif;
-  font-size: 2rem;
-  font-weight: 500;
-  margin: 0;
-}
-.oftheweek .galery-wines {
+main .oftheweek .wine-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -233,7 +363,7 @@ footer .legalrights {
       -ms-flex-pack: center;
           justify-content: center;
 }
-.oftheweek .galery-wines .wine {
+main .oftheweek .wine-list .wine-item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -245,28 +375,22 @@ footer .legalrights {
   width: 100%;
   padding: 0 10px;
 }
-.oftheweek .galery-wines .wine span {
+main .oftheweek .wine-list .wine-item span {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   height: 1px;
   background-color: #8a8180;
 }
-.oftheweek .galery-wines .wine img {
+main .oftheweek .wine-list .wine-item img {
   height: 200px;
   -o-object-fit: contain;
      object-fit: contain;
 }
-.oftheweek .galery-wines .wine p {
-  margin: 0;
-  font-family: Inter, sans-serif;
-  font-size: 0.75rem;
-  font-weight: 400;
-}
-.oftheweek .img-quinta {
+main .oftheweek .img-quinta {
   overflow: hidden;
 }
-.oftheweek .img-quinta .image-divider {
+main .oftheweek .img-quinta img {
   width: 100%;
   height: 505px;
   -o-object-fit: cover;
@@ -274,8 +398,7 @@ footer .legalrights {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
 }
-
-.explore {
+main .explore {
   padding: 80px 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -289,7 +412,7 @@ footer .legalrights {
           align-items: center;
   gap: 64px;
 }
-.explore .article {
+main .explore div {
   font-family: Inter, sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -298,30 +421,19 @@ footer .legalrights {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 24px;
+  gap: 10px;
+  margin-top: 20px;
 }
-.explore .article img {
+main .explore div img {
   width: 100%;
   height: 280px;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.explore .article h4 {
-  font-size: 1rem;
-  color: #8a8180;
-  font-weight: 400;
-  margin: 0;
+main .explore div p {
+  margin: 0px 0;
 }
-.explore .article h3 {
-  font-size: 1.25rem;
-  font-weight: 500;
-  margin: 0;
-}
-.explore .article p {
-  font-size: 0.875rem;
-  font-weight: 400;
-}
-.explore .article button {
+main .explore div button {
   margin-top: 8px;
   font-family: Inter, sans-serif;
   font-size: 0.875rem;
@@ -330,15 +442,17 @@ footer .legalrights {
   background-color: black;
   color: white;
   border: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
-
-.wine-shop img {
+main .wine-shop img {
   width: 100%;
   height: 325px;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.wine-shop .shop-text {
+main .wine-shop div {
   text-align: center;
   padding: 56px 40px;
   display: -webkit-box;
@@ -353,20 +467,7 @@ footer .legalrights {
       -ms-flex-align: center;
           align-items: center;
 }
-.wine-shop .shop-text h2 {
-  font-family: playfair Display, serif;
-  font-size: 2.5rem;
-  font-weight: 400;
-  text-transform: uppercase;
-  margin: 0;
-}
-.wine-shop .shop-text p {
-  font-family: Inter, sans-serif;
-  font-size: 0.875rem;
-  font-weight: 400;
-  margin: 0;
-}
-.wine-shop .shop-text button {
+main .wine-shop div button {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -379,3 +480,5 @@ footer .legalrights {
   color: white;
   border: none;
 }
+
+/*-----------------------------STORE-------------------------------*/
