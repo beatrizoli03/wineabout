@@ -1,4 +1,90 @@
 @import url("https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+body {
+  background-color: white;
+  margin: 0;
+}
+body .logo {
+  font-family: "Playfair Display", serif;
+  font-size: 1.25rem;
+  font-weight: 900;
+  margin: 0;
+}
+
+.logo {
+  font-family: "Playfair Display", serif;
+  font-size: 1.25rem;
+  font-weight: 900;
+  margin: 0;
+}
+
+h1 {
+  font-family: "Inter", sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  margin: 0;
+}
+h1.logo {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  font-weight: 900;
+  margin: 0;
+}
+h1.shop {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+h2 {
+  font-family: "Inter", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+h3 {
+  font-family: "Beau Rivage", serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+h4 {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 0;
+  color: #942A50;
+}
+
+p {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 130%;
+  margin: 0;
+  color: black;
+}
+
+.quote p {
+  font-family: "Inter", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 130%;
+  margin: 0;
+  color: black;
+  font-style: italic;
+}
+.quote p.author {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 130%;
+  margin: 0;
+  color: #8a8180;
+}
+
 header {
   height: 75px;
   width: 100%;
@@ -23,9 +109,7 @@ header h3 a {
   color: black;
   font-weight: 900;
 }
-
-/*--off-screen-menu---*/
-.off-screen-menu {
+header .off-screen-menu {
   background-color: white;
   height: 100vh;
   width: 100%;
@@ -46,37 +130,35 @@ header h3 a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-family: "Inter", sans-serif;
   font-size: 1.5rem;
-  font-family: Inter, sans-serif;
   font-weight: 400;
+  margin: 0;
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
 }
-
-.off-screen-menu li {
+header .off-screen-menu li {
   list-style-type: none;
   margin: 1rem 0;
 }
-
-.off-screen-menu a {
+header .off-screen-menu a {
   color: black;
   text-decoration: none;
 }
-
-.off-screen-menu.active {
+header .off-screen-menu a:hover {
+  color: #a5a5a5;
+}
+header .off-screen-menu.active {
   right: 0;
 }
-
-/*---ham-menu---*/
-.ham-menu {
+header .ham-menu {
   position: relative;
   width: 30px;
   height: 20px;
   margin-left: auto;
   cursor: pointer;
 }
-
-.ham-menu span {
+header .ham-menu span {
   width: 100%;
   height: 2px;
   background-color: black;
@@ -86,34 +168,28 @@ header h3 a {
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
 }
-
-.ham-menu span:nth-child(1) {
+header .ham-menu span:nth-child(1) {
   top: 2%;
 }
-
-.ham-menu span:nth-child(2) {
+header .ham-menu span:nth-child(2) {
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
 }
-
-.ham-menu span:nth-child(3) {
+header .ham-menu span:nth-child(3) {
   top: 98%;
   -webkit-transform: translateY(-100%);
           transform: translateY(-100%);
 }
-
-.ham-menu.active span:nth-child(1) {
+header .ham-menu.active span:nth-child(1) {
   top: 50%;
   -webkit-transform: translateY(-50%) rotate(45deg);
           transform: translateY(-50%) rotate(45deg);
 }
-
-.ham-menu.active span:nth-child(2) {
+header .ham-menu.active span:nth-child(2) {
   opacity: 0;
 }
-
-.ham-menu.active span:nth-child(3) {
+header .ham-menu.active span:nth-child(3) {
   top: 50%;
   -webkit-transform: translateY(-50%) rotate(-45deg);
           transform: translateY(-50%) rotate(-45deg);
@@ -481,4 +557,146 @@ main .wine-shop div button {
   border: none;
 }
 
-/*-----------------------------STORE-------------------------------*/
+.store-hero {
+  width: 100%;
+  height: 100%;
+  padding: 40px 20px 40px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  background-color: #F7F7F7;
+}
+.store-hero div:first-child {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  width: 100%;
+  height: 400px;
+  background-image: url("/src/assets/images/galery-wines.png");
+  background-size: cover;
+}
+.store-hero div:last-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 5px;
+}
+.store-hero div:last-child h4:first-child {
+  color: #8a8180;
+}
+.store-hero div:last-child h4:last-child {
+  color: black;
+}
+
+.store-filters {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 42px 20px 33px 20px;
+}
+.store-filters .sort-by {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+.store-filters .sort-by h4 {
+  color: black;
+}
+.store-filters .sort-by div {
+  position: relative;
+  display: inline-block;
+}
+.store-filters .sort-by div span {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: #8a8180;
+  margin: 0;
+}
+.store-filters .sort-by div button {
+  background-color: white;
+  color: #8a8180;
+  border: 0px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 8px;
+}
+.store-filters .sort-by div button:hover {
+  color: black;
+}
+.store-filters .sort-by div ul {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: #8a8180;
+  margin: 0;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: -20px;
+  background-color: white;
+  min-width: 160px;
+  border: none;
+  padding: 5px 10px;
+  margin: 0;
+  z-index: 1000;
+}
+.store-filters .sort-by div ul li {
+  list-style: none;
+}
+.store-filters .sort-by div ul li a {
+  display: block;
+  padding: 12px 16px;
+  color: black;
+  text-decoration: none;
+  text-align: left;
+}
+.store-filters .sort-by div ul li a:hover {
+  color: #8a8180;
+}
+.store-filters .sort-by div:hover ul {
+  display: block;
+}
+.store-filters .filters button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 8px;
+  border: 0.2px solid black;
+  background-color: white;
+  padding: 4px 16px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.store-filters .filters button h4 {
+  color: black;
+}
+.store-filters .filters button:hover {
+  background-color: black;
+  cursor: pointer;
+}
+.store-filters .filters button:hover path {
+  fill: white;
+}
+.store-filters .filters button:hover h4 {
+  color: white;
+}
+
+.store-list {
+  height: 1000px;
+}
