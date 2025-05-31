@@ -700,3 +700,207 @@ main .wine-shop div button {
 .store-list {
   height: 1000px;
 }
+
+.contact-hero {
+  width: 100%;
+  min-height: 365px;
+  background-image: url("/src/assets/images/contact-quinta-img.png");
+  background-size: cover;
+  background-position: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+.contact-hero h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  color: white;
+  font-weight: 700;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  bottom: 40px;
+  left: 20px;
+}
+
+.contact-header {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 40px 20px;
+  gap: 32px;
+}
+.contact-header .contact-header-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0px;
+}
+.contact-header .contact-header-title h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  color: black;
+  font-weight: 700;
+  margin-bottom: 16px;
+  margin: 0;
+}
+.contact-header .contact-header-title h4 {
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  color: #8a8180;
+  margin-bottom: 8px;
+}
+.contact-header p {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  color: #8a8180;
+  max-width: 600px;
+}
+
+.contact-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+  padding: 0px 20px;
+}
+.contact-info .contact-info-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 16px;
+}
+.contact-info .contact-info-item p {
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  color: black;
+  margin: 0;
+}
+.contact-info .contact-info-item .contact-info .contact-info-item:nth-child(3) {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+.contact-info .contact-info-item .address-text {
+  gap: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.contact-info .contact-info-item .address-text :nth-child(2) {
+  color: #8a8180;
+  width: 150px;
+}
+
+.contact-form-container {
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 40px;
+  padding: 64px 20px;
+}
+.contact-form-container .contact-form-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 8px;
+}
+.contact-form-container .contact-form-header h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  color: black;
+  font-weight: 700;
+}
+.contact-form-container .contact-form-header p {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  color: #8a8180;
+}
+.contact-form-container .contact-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 24px;
+}
+.contact-form-container .contact-form form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 16px;
+}
+.contact-form-container .contact-form form input, .contact-form-container .contact-form form textarea {
+  padding: 12px;
+  border: 1px solid #dddddd;
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  background-color: #F7F7F7;
+}
+.contact-form-container .contact-form form input:focus, .contact-form-container .contact-form form textarea:focus {
+  border-color: #942A50;
+  outline: none;
+}
+.contact-form-container .contact-form form label {
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  color: black;
+}
+.contact-form-container .contact-form form button {
+  background-color: black;
+  color: white;
+  font-family: "Inter", sans-serif;
+  text-transform: uppercase;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+}
+.contact-form-container .contact-form form button:hover {
+  background-color: #942A50;
+}

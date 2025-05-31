@@ -310,4 +310,175 @@ main{
 }
 
 
+//-----------------------------
+//Contact Page Styles
+//-----------------------------
+
+.contact-hero {
+    width: 100%;
+    min-height: calc(440px - 75px);
+    background-image: url('/src/assets/images/contact-quinta-img.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    position: relative;
+
+    h1 {
+        font-family: $font-display;
+        font-size: 2.5rem;
+        color: $color-bg;
+        font-weight: 700;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        bottom: 40px;
+        left: 20px;
+    }  
+}
+
+.contact-header {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 20px;
+    gap: 32px;
+
+    .contact-header-title {
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+        
+        h2 {
+            font-family: $font-display;
+            font-size: $font-size-lg;
+            color: $color-text;
+            font-weight: 700;
+            margin-bottom: 16px;
+            margin: 0;
+        }
+
+        h4 {
+            font-family: $font-sans;
+            font-size: $font-size-sm;
+            color: $color-muted;
+            margin-bottom: 8px;
+        }
+    }
+
+    p {
+        margin: 0;
+        font-family: $font-sans;
+        font-size: $font-size-base;
+        color: $color-muted;
+        max-width: 600px;
+    }
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0px 20px;
+
+    .contact-info-item {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        p {
+            font-family: $font-sans;
+            font-size: $font-size-sm;
+            color: $color-text;
+            margin: 0;
+        }
+
+        .contact-info .contact-info-item:nth-child(3) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .address-text {
+            gap: 8px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .address-text :nth-child(2) {
+            color: $color-muted;
+            width: 150px;
+        }
+    }
+}
+
+.contact-form-container {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        padding: 64px 20px;
+
+        .contact-form-header {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        h2 {
+            font-family: $font-display;
+            font-size: $font-size-lg;
+            color: $color-text;
+            font-weight: 700;
+        }
+
+        p {
+            font-family: $font-sans;
+            font-size: $font-size-base;
+            color: $color-muted;
+        }
+    }
+
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            input, textarea {
+                padding: 12px;
+                border: 1px solid $color-border;
+                font-family: $font-sans;
+                font-size: $font-size-sm;
+                background-color: $color-bg-secondary;
+
+                &:focus {
+                    border-color: $color-primary;
+                    outline: none;
+                }
+            }
+
+            label {
+                font-family: $font-sans;
+                font-size: $font-size-sm;
+                color: $color-text;
+            }
+
+            button {
+                background-color: $color-text;
+                color: $color-bg;
+                font-family: $font-sans;
+                text-transform: uppercase;
+                padding: 12px 24px;
+                border: none;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: $color-primary;
+                }
+            }
+        }
+    }
+}
 
