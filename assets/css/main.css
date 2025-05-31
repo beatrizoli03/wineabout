@@ -136,6 +136,7 @@ header .off-screen-menu {
   margin: 0;
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
+  z-index: 1;
 }
 header .off-screen-menu li {
   list-style-type: none;
@@ -157,6 +158,7 @@ header .ham-menu {
   height: 20px;
   margin-left: auto;
   cursor: pointer;
+  z-index: 1;
 }
 header .ham-menu span {
   width: 100%;
@@ -698,25 +700,17 @@ main .wine-shop div button {
 }
 
 .store-list {
-  height: 1000px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 15px 1fr;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  padding: 0px 10px 80px 10px;
+  height: auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
-
-.contact-hero {
-  width: 100%;
-  min-height: 365px;
-  background-image: url("/src/assets/images/contact-quinta-img.png");
-  background-size: cover;
-  background-position: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-}
-.contact-hero h1 {
-  font-family: "Playfair Display", serif;
-  font-size: 2.5rem;
-  color: white;
-  font-weight: 700;
+.store-list .wine-card {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -724,92 +718,67 @@ main .wine-shop div button {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  position: absolute;
-  bottom: 40px;
-  left: 20px;
+  gap: 15px;
 }
-
-.contact-header {
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  padding: 40px 20px;
-  gap: 32px;
+.store-list .wine-card .wine-item {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #F7F7F7;
+  padding: 20px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
-.contact-header .contact-header-title {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  gap: 0px;
+.store-list .wine-card .wine-item img {
+  -ms-grid-column: 2;
+  grid-column: 2;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  max-width: 90%;
+  height: auto;
+  max-height: 270px;
+  display: block;
 }
-.contact-header .contact-header-title h2 {
-  font-family: "Playfair Display", serif;
-  font-size: 1.5rem;
-  color: black;
-  font-weight: 700;
-  margin-bottom: 16px;
-  margin: 0;
-}
-.contact-header .contact-header-title h4 {
-  font-family: "Inter", sans-serif;
-  font-size: 0.875rem;
-  color: #8a8180;
-  margin-bottom: 8px;
-}
-.contact-header p {
-  margin: 0;
-  font-family: "Inter", sans-serif;
-  font-size: 1rem;
-  color: #8a8180;
-  max-width: 600px;
-}
-
-.contact-info {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  gap: 20px;
-  padding: 0px 20px;
-}
-.contact-info .contact-info-item {
+.store-list .wine-card .wine-item > div:last-child {
+  -ms-grid-column: 3;
+  grid-column: 3;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 16px;
+  -ms-grid-row-align: start;
+      align-self: start;
+  -ms-grid-column-align: end;
+      justify-self: end;
+  gap: 5px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
-.contact-info .contact-info-item p {
+.store-list .wine-card .wine-item > div:last-child p {
   font-family: "Inter", sans-serif;
   font-size: 0.875rem;
-  color: black;
+  font-weight: 400;
+  line-height: 130%;
   margin: 0;
+  color: currentColor;
+  white-space: nowrap;
 }
-.contact-info .contact-info-item .contact-info .contact-info-item:nth-child(3) {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+.store-list .wine-card .wine-item > div:last-child div {
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  background-color: currentColor;
 }
-.contact-info .contact-info-item .address-text {
-  gap: 8px;
+.store-list .wine-card .wine-text {
+  gap: 5px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -817,90 +786,28 @@ main .wine-shop div button {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  text-align: center;
 }
-.contact-info .contact-info-item .address-text :nth-child(2) {
-  color: #8a8180;
-  width: 150px;
-}
-
-.contact-form-container {
-  margin: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  gap: 40px;
-  padding: 64px 20px;
-}
-.contact-form-container .contact-form-header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  gap: 8px;
-}
-.contact-form-container .contact-form-header h2 {
-  font-family: "Playfair Display", serif;
-  font-size: 1.5rem;
+.store-list .wine-card .wine-text h4:first-child {
   color: black;
-  font-weight: 700;
+  font-size: 0.9rem;
 }
-.contact-form-container .contact-form-header p {
-  font-family: "Inter", sans-serif;
-  font-size: 1rem;
+.store-list .wine-card .wine-text h4:last-child {
   color: #8a8180;
+  font-size: 0.8rem;
 }
-.contact-form-container .contact-form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  gap: 24px;
+.store-list .wine-card--port {
+  color: #4B0082;
 }
-.contact-form-container .contact-form form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  gap: 16px;
+.store-list .wine-card--red {
+  color: #990000;
 }
-.contact-form-container .contact-form form input, .contact-form-container .contact-form form textarea {
-  padding: 12px;
-  border: 1px solid #dddddd;
-  font-family: "Inter", sans-serif;
-  font-size: 0.875rem;
-  background-color: #F7F7F7;
+.store-list .wine-card--white {
+  color: #DAA520;
 }
-.contact-form-container .contact-form form input:focus, .contact-form-container .contact-form form textarea:focus {
-  border-color: #942A50;
-  outline: none;
+.store-list .wine-card--rose {
+  color: #FF3366;
 }
-.contact-form-container .contact-form form label {
-  font-family: "Inter", sans-serif;
-  font-size: 0.875rem;
-  color: black;
-}
-.contact-form-container .contact-form form button {
-  background-color: black;
-  color: white;
-  font-family: "Inter", sans-serif;
-  text-transform: uppercase;
-  padding: 12px 24px;
-  border: none;
-  cursor: pointer;
-}
-.contact-form-container .contact-form form button:hover {
-  background-color: #942A50;
+.store-list .wine-card--sparkling {
+  color: #008080;
 }
