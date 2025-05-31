@@ -1,90 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
-body {
-  background-color: white;
-  margin: 0;
-}
-body .logo {
-  font-family: "Playfair Display", serif;
-  font-size: 1.25rem;
-  font-weight: 900;
-  margin: 0;
-}
-
-.logo {
-  font-family: "Playfair Display", serif;
-  font-size: 1.25rem;
-  font-weight: 900;
-  margin: 0;
-}
-
-h1 {
-  font-family: "Inter", sans-serif;
-  font-size: 2rem;
-  font-weight: 400;
-  margin: 0;
-}
-h1.logo {
-  font-family: "Playfair Display", serif;
-  font-size: 3rem;
-  font-weight: 900;
-  margin: 0;
-}
-h1.shop {
-  font-family: "Playfair Display", serif;
-  font-size: 3rem;
-  font-weight: 400;
-  margin: 0;
-}
-
-h2 {
-  font-family: "Inter", sans-serif;
-  font-size: 1.5rem;
-  font-weight: 400;
-  margin: 0;
-}
-
-h3 {
-  font-family: "Beau Rivage", serif;
-  font-size: 1.5rem;
-  font-weight: 400;
-  margin: 0;
-}
-
-h4 {
-  font-family: "Inter", sans-serif;
-  font-size: 1rem;
-  font-weight: 400;
-  margin: 0;
-  color: #942A50;
-}
-
-p {
-  font-family: "Inter", sans-serif;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 130%;
-  margin: 0;
-  color: black;
-}
-
-.quote p {
-  font-family: "Inter", sans-serif;
-  font-size: 1.25rem;
-  font-weight: 400;
-  line-height: 130%;
-  margin: 0;
-  color: black;
-  font-style: italic;
-}
-.quote p.author {
-  font-family: "Inter", sans-serif;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 130%;
-  margin: 0;
-  color: #8a8180;
-}
-
+@import url("https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 header {
   height: 75px;
   width: 100%;
@@ -104,10 +23,12 @@ header {
   border-bottom: 1px solid #dddddd;
 }
 header h3 a {
-  cursor: pointer;
-  text-decoration: none;
-  color: black;
+  font-family: "Playfair Display", serif;
+  font-size: 1.25rem;
   font-weight: 900;
+  margin: 0;
+  color: black;
+  text-decoration: none;
 }
 header .off-screen-menu {
   background-color: white;
@@ -130,10 +51,6 @@ header .off-screen-menu {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-family: "Inter", sans-serif;
-  font-size: 1.5rem;
-  font-weight: 400;
-  margin: 0;
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
   z-index: 1;
@@ -143,6 +60,11 @@ header .off-screen-menu li {
   margin: 1rem 0;
 }
 header .off-screen-menu a {
+  font-family: "Inter", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 130%;
+  margin: 0;
   color: black;
   text-decoration: none;
 }
@@ -197,92 +119,6 @@ header .ham-menu.active span:nth-child(3) {
           transform: translateY(-50%) rotate(-45deg);
 }
 
-body {
-  background-color: white;
-  margin: 0;
-}
-body .logo {
-  font-family: "Playfair Display", serif;
-  font-size: 1.25rem;
-  font-weight: 900;
-  margin: 0;
-}
-
-.logo {
-  font-family: "Playfair Display", serif;
-  font-size: 1.25rem;
-  font-weight: 900;
-  margin: 0;
-}
-
-h1 {
-  font-family: "Inter", sans-serif;
-  font-size: 2rem;
-  font-weight: 400;
-  margin: 0;
-}
-h1.logo {
-  font-family: "Playfair Display", serif;
-  font-size: 3rem;
-  font-weight: 900;
-  margin: 0;
-}
-h1.shop {
-  font-family: "Playfair Display", serif;
-  font-size: 3rem;
-  font-weight: 400;
-  margin: 0;
-}
-
-h2 {
-  font-family: "Inter", sans-serif;
-  font-size: 1.5rem;
-  font-weight: 400;
-  margin: 0;
-}
-
-h3 {
-  font-family: "Beau Rivage", serif;
-  font-size: 1.5rem;
-  font-weight: 400;
-  margin: 0;
-}
-
-h4 {
-  font-family: "Inter", sans-serif;
-  font-size: 1rem;
-  font-weight: 400;
-  margin: 0;
-  color: #942A50;
-}
-
-p {
-  font-family: "Inter", sans-serif;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 130%;
-  margin: 0;
-  color: black;
-}
-
-.quote p {
-  font-family: "Inter", sans-serif;
-  font-size: 1.25rem;
-  font-weight: 400;
-  line-height: 130%;
-  margin: 0;
-  color: black;
-  font-style: italic;
-}
-.quote p.author {
-  font-family: "Inter", sans-serif;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 130%;
-  margin: 0;
-  color: #8a8180;
-}
-
 footer {
   background-color: black;
   color: white;
@@ -302,6 +138,11 @@ footer {
 }
 footer h3 {
   margin: 0;
+  font-family: "Playfair Display", serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+  color: white;
 }
 footer ul {
   list-style: none;
@@ -317,8 +158,12 @@ footer ul {
 }
 footer .menufooter a {
   color: white;
-  font-family: Inter, sans-serif;
-  font-size: 0.875rem;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 130%;
+  margin: 0;
+  color: white;
   text-decoration: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -353,16 +198,65 @@ footer a {
 }
 footer a p {
   text-decoration: none;
-  color: #a5a5a5;
+  color: #8a8180;
 }
 footer p {
-  font-family: Inter, sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 130%;
   margin: 0;
-  color: #535353;
+  color: white;
 }
 footer .legalrights {
   width: 180px;
+}
+
+body {
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-family: "Inter", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin: 0;
+  color: black;
+}
+
+h2 {
+  font-family: "Inter", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin: 0;
+  color: black;
+}
+
+h3 {
+  font-family: "Inter", sans-serif;
+  font-size: 2rem;
+  font-weight: 500;
+  margin: 0;
+  color: black;
+}
+
+h4 {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 0;
+  color: #942A50;
+}
+
+p {
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 130%;
+  margin: 0;
+  color: black;
 }
 
 main .hero-image {
@@ -383,6 +277,21 @@ main .hero-image {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+main .hero-image h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 4rem;
+  font-weight: 700;
+  margin: 0;
+  color: white;
+  margin: 0;
+}
+main .hero-image h3 {
+  font-family: "Beau Rivage", serif;
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin: 0;
+  color: white;
 }
 main .hero-image div:nth-child(1) {
   -ms-flex-item-align: center;
@@ -411,6 +320,12 @@ main .hero-image div:nth-child(2) {
 }
 main .hero-image div:nth-child(2) p {
   color: white;
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 130%;
+  margin: 0;
+  color: white;
 }
 main .quote {
   padding: 80px 50px;
@@ -426,6 +341,23 @@ main .quote {
       -ms-grid-row-align: center;
       align-self: center;
   gap: 16px;
+}
+main .quote p:first-child {
+  font-family: "Inter", sans-serif;
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 130%;
+  margin: 0;
+  color: black;
+}
+main .quote p:last-child {
+  font-family: "Inter", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 130%;
+  margin: 0;
+  color: #8a8180;
 }
 main .oftheweek {
   text-align: center;
@@ -499,7 +431,7 @@ main .explore div {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 10px;
+  gap: 5px;
   margin-top: 20px;
 }
 main .explore div img {
@@ -509,10 +441,11 @@ main .explore div img {
      object-fit: cover;
 }
 main .explore div p {
+  padding-top: 10px;
   margin: 0px 0;
 }
 main .explore div button {
-  margin-top: 8px;
+  margin-top: 20px;
   font-family: Inter, sans-serif;
   font-size: 0.875rem;
   font-weight: 400;
@@ -523,6 +456,13 @@ main .explore div button {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+}
+main .wine-shop h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  color: black;
 }
 main .wine-shop img {
   width: 100%;
@@ -575,6 +515,20 @@ main .wine-shop div button {
           justify-content: end;
   background-color: #F7F7F7;
 }
+.store-hero h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  color: black;
+}
+.store-hero h4 {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 0;
+  color: #8a8180;
+}
 .store-hero div:first-child {
   -ms-flex-item-align: end;
       align-self: flex-end;
@@ -624,8 +578,9 @@ main .wine-shop div button {
 .store-filters .sort-by div span {
   font-family: "Inter", sans-serif;
   font-size: 1rem;
-  font-weight: #8a8180;
+  font-weight: 400;
   margin: 0;
+  color: #8a8180;
 }
 .store-filters .sort-by div button {
   background-color: white;
@@ -642,10 +597,6 @@ main .wine-shop div button {
   color: black;
 }
 .store-filters .sort-by div ul {
-  font-family: "Inter", sans-serif;
-  font-size: 1rem;
-  font-weight: #8a8180;
-  margin: 0;
   display: none;
   position: absolute;
   top: 100%;
@@ -719,6 +670,7 @@ main .wine-shop div button {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 15px;
+  margin-bottom: 20px;
 }
 .store-list .wine-card .wine-item {
   display: -ms-grid;
@@ -763,12 +715,6 @@ main .wine-shop div button {
   width: fit-content;
 }
 .store-list .wine-card .wine-item > div:last-child p {
-  font-family: "Inter", sans-serif;
-  font-size: 0.875rem;
-  font-weight: 400;
-  line-height: 130%;
-  margin: 0;
-  color: currentColor;
   white-space: nowrap;
 }
 .store-list .wine-card .wine-item > div:last-child div {
@@ -786,15 +732,21 @@ main .wine-shop div button {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  text-align: center;
+  text-align: left;
+}
+.store-list .wine-card .wine-text h4 {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 130%;
+  margin: 0;
+  color: black;
 }
 .store-list .wine-card .wine-text h4:first-child {
   color: black;
-  font-size: 0.9rem;
 }
 .store-list .wine-card .wine-text h4:last-child {
   color: #8a8180;
-  font-size: 0.8rem;
 }
 .store-list .wine-card--port {
   color: #4B0082;
@@ -810,4 +762,211 @@ main .wine-shop div button {
 }
 .store-list .wine-card--sparkling {
   color: #008080;
+}
+
+.contact-hero {
+  width: 100%;
+  min-height: 365px;
+  background-image: url("/src/assets/images/contact-quinta-img.png");
+  background-size: cover;
+  background-position: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+.contact-hero h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  bottom: 40px;
+  left: 20px;
+}
+
+.contact-header {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 40px 20px;
+  gap: 32px;
+}
+.contact-header .contact-header-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0px;
+}
+.contact-header .contact-header-title h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+  color: black;
+  margin: 0;
+}
+.contact-header p {
+  margin: 0;
+  max-width: 600px;
+}
+
+.contact-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+  padding: 0px 20px 80px 20px;
+}
+.contact-info .contact-info-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 16px;
+}
+.contact-info .contact-info-item p {
+  margin: 0;
+}
+.contact-info .contact-info-item .contact-info .contact-info-item:nth-child(3) {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+.contact-info .contact-info-item .address-text {
+  gap: 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.contact-info .contact-info-item .address-text :nth-child(2) {
+  color: #8a8180;
+  width: 150px;
+}
+
+.contact-form-container {
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 40px;
+  padding: 64px 20px;
+  background-color: #F7F7F7;
+}
+.contact-form-container .contact-form-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 8px;
+}
+.contact-form-container .contact-form-header h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+  color: black;
+}
+.contact-form-container .contact-form-header p {
+  color: #8a8180;
+}
+.contact-form-container .contact-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 24px;
+}
+.contact-form-container .contact-form form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.contact-form-container .contact-form form input, .contact-form-container .contact-form form textarea {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #dddddd;
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 130%;
+  margin: 0;
+  color: #a5a5a5;
+}
+.contact-form-container .contact-form form input:focus, .contact-form-container .contact-form form textarea:focus {
+  border-color: #942A50;
+  outline: none;
+}
+.contact-form-container .contact-form form input, .contact-form-container .contact-form form textarea {
+  margin-bottom: 15px;
+}
+.contact-form-container .contact-form form label {
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 130%;
+  margin: 0;
+  color: black;
+}
+.contact-form-container .contact-form form button {
+  background-color: black;
+  text-transform: uppercase;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 130%;
+  margin: 0;
+  color: white;
+}
+.contact-form-container .contact-form form button:hover {
+  background-color: #942A50;
 }

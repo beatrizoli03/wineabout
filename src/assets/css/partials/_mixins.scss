@@ -1,0 +1,64 @@
+@import 'variables',
+        'typography';
+
+// ------------------------------------
+// Mixins 
+// ------------------------------------
+@mixin heading-1($font-size: $font-size-xxl, $font-weight: 400, $margin: 0, $color: $color-text) {
+  font-family: $font-display;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  margin: $margin;
+  color: $color; 
+}
+
+@mixin heading-2($font-size: $font-size-lg, $font-weight: 500, $margin: 0, $color: $color-text) {
+  font-family: $font-sans;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  margin: $margin;
+  color: $color;
+}
+
+@mixin heading-3($font-size: $font-size-m, $font-weight: 400, $margin: 0, $color: $color-text) {
+  font-family: $font-sans;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  margin: $margin;
+  color: $color; 
+}
+
+@mixin heading-4($font-size: $font-size-s, $font-weight: 400, $margin: 0, $color: $color-text) {
+  font-family: $font-sans;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  margin: $margin;
+  color: $color; 
+}
+
+@mixin heading-5($font-size: $font-size-s, $font-weight: 400, $margin: 0, $color: $color-text) {
+  font-family: $font-script;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  margin: $margin;
+  color: $color; 
+}
+
+@mixin paragraph-style($font-size: $font-size-base, $color: $color-text, $margin: 0) {
+  font-family: $font-sans;
+  font-size: $font-size;
+  font-weight: 400;
+  line-height: 130%;
+  margin: $margin;
+  color: $color;
+}
+
+@mixin paragraph-quote($font-size: $font-size-m, $color: $color-text, $margin: 0) {
+  font-family: $font-sans;
+  font-size: $font-size;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 130%;
+  margin: $margin;
+  color: $color;
+}

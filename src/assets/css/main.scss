@@ -1,9 +1,11 @@
 @import
     "partials/header",
-    "partials/content",
-    "partials/footer";
-
-@import url('https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+    "partials/footer",
+    "partials/components",
+    "partials/mixins",
+    "partials/typography",
+    "partials/variables",
+    "partials/base";
 
 //-----------------------------
 //Home Page Styles
@@ -19,8 +21,17 @@ main{
         display: flex;
         flex-direction: column;
         text-align: center;
-        color: white;
+        color: $color-bg;
         justify-content: center;
+
+        h1 {
+            @include heading-1 ($font-size: $font-size-xxxl, $font-weight: 700, $color: $color-bg);
+            margin: 0;
+        }
+
+        h3 {
+            @include heading-5 ($font-size: $font-size-xxl, $font-weight: 500, $color: $color-bg);
+        }
 
         div:nth-child(1) {
             align-self: center;
@@ -31,7 +42,7 @@ main{
             bottom: 24px;
             left: 50%;
             transform: translateX(-50%);
-            color: white;
+            color: $color-bg;
             text-decoration: none;
             gap: 8px;
             display: flex;
@@ -39,19 +50,28 @@ main{
             align-items: center;
 
             p{
-                color: white;
+                color: $color-bg;
+                @include paragraph-style ($font-size: $font-size-xs, $color: $color-bg);
             }
         }
 
     }
 
    .quote {
-    padding: 80px 50px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-self: center;
-    gap: 16px;
+        padding: 80px 50px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        gap: 16px;
+
+        p:first-child {
+            @include paragraph-quote ($font-size: $font-size-lg, $color: $color-text);
+        }
+
+        p:last-child {
+            @include paragraph-style ($font-size: $font-size-m, $color: $color-muted);
+        }
     }
 
     .oftheweek{
@@ -107,7 +127,7 @@ main{
             font-family: Inter, sans-serif;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 5px;
             margin-top: 20px;
 
             img{
@@ -117,11 +137,12 @@ main{
             }
 
             p{
+                padding-top: 10px;
                 margin: 0px 0;
             }
 
             button {
-                margin-top: 8px;
+                margin-top: 20px;
                 font-family: Inter, sans-serif;
                 font-size: 0.875rem;
                 font-weight: 400;
@@ -135,6 +156,10 @@ main{
     }
 
     .wine-shop{
+
+        h1 {
+            @include heading-1 ($font-size: $font-size-xxl, $font-weight: 700, $color: $color-text);
+        }
 
         img{
             width: 100%;
@@ -179,6 +204,14 @@ main{
     justify-content: end;
     background-color: $color-bg-secondary;
 
+    h1 {
+        @include heading-1 ($font-size: $font-size-xxl, $font-weight: 700, $color: $color-text);
+    }
+
+    h4 {
+        @include heading-4 ($font-size: $font-size-s, $font-weight: 400, $color: $color-muted);
+    }
+
     div:first-child{
         align-self: flex-end;
         width: 100%;
@@ -220,7 +253,7 @@ main{
             display: inline-block;
 
             span {
-                @include heading-style(1rem, $color-muted);
+                @include heading-4 ($font-size: $font-size-s, $font-weight: 400, $color: $color-muted);
             }
 
             button {
@@ -238,7 +271,6 @@ main{
             }
 
             ul {
-                @include heading-style(1rem, $color-muted);
                 display: none;
                 position: absolute;
                 top: 100%; 
@@ -317,6 +349,7 @@ main{
         display: flex;
         flex-direction: column;
         gap: 15px;
+        margin-bottom: 20px;
 
         .wine-item {
             display: grid;
@@ -345,7 +378,6 @@ main{
                 width: fit-content;
 
                 p {
-                    @include paragraph-style(0.875rem, currentColor); // usa a cor herdada
                     white-space: nowrap;
                 }
 
@@ -362,16 +394,18 @@ main{
             gap: 5px;
             display: flex;
             flex-direction: column;
-            text-align: center;
+            text-align: left;
+
+            h4 {
+                @include paragraph-style ($font-size: $font-size-s, $color: $color-text);
+            }
 
             h4:first-child {
                 color: $color-text;
-                font-size: 0.9rem;
             }
 
             h4:last-child {
                 color: $color-muted;
-                font-size: 0.8rem;
             }
         }
 
@@ -394,6 +428,155 @@ main{
         
         &--sparkling {
             color: $color-sparkling;
+        }
+    }
+}
+
+//-----------------------------
+//Contact Page Styles
+//-----------------------------
+
+.contact-hero {
+    width: 100%;
+    min-height: calc(440px - 75px);
+    background-image: url('/src/assets/images/contact-quinta-img.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    position: relative;
+
+    h1 {
+        @include heading-1 ($font-size: $font-size-xxl, $font-weight: 700, $color: $color-bg);
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        bottom: 40px;
+        left: 20px;
+    }  
+}
+
+.contact-header {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 20px;
+    gap: 32px;
+
+    .contact-header-title {
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+        
+        h2 {
+            @include heading-1 ($font-size: $font-size-lg, $font-weight: 700, $color: $color-text);
+            margin: 0;
+        }
+    }
+
+    p {
+        margin: 0;
+        max-width: 600px;
+    }
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0px 20px 80px 20px;
+
+    .contact-info-item {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        p {
+            margin: 0;
+        }
+
+        .contact-info .contact-info-item:nth-child(3) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .address-text {
+            gap: 2px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .address-text :nth-child(2) {
+            color: $color-muted;
+            width: 150px;
+        }
+    }
+}
+
+.contact-form-container {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        padding: 64px 20px;
+        background-color: $color-bg-secondary;
+
+        .contact-form-header {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        h2 {
+            @include heading-1 ($font-size: $font-size-lg, $font-weight: 700, $color: $color-text);
+
+        }
+
+        p {
+            color: $color-muted;
+        }
+    }
+
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        form {
+            display: flex;
+            flex-direction: column;
+
+            input, textarea {
+                padding: 12px;
+                border: none;
+                border-radius: 8px;
+                background-color: $color-border;
+                @include paragraph-style ($font-size: $font-size-xs, $color: $color-hover);
+
+                &:focus {
+                    border-color: $color-primary;
+                    outline: none;
+                }
+            }
+
+            input, textarea {
+                margin-bottom: 15px;
+            }
+
+            label {
+                @include paragraph-style ($font-size: $font-size-base, $color: $color-text);
+            }
+
+            button {
+                background-color: $color-text;
+                text-transform: uppercase;
+                padding: 12px 24px;
+                border: none;
+                cursor: pointer;
+                @include paragraph-style ($font-size: $font-size-base, $color: $color-bg);
+
+                &:hover {
+                    background-color: $color-primary;
+                }
+            }
         }
     }
 }

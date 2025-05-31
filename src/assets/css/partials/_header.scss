@@ -1,4 +1,6 @@
-@import '../partials/content';
+@import 'variables',
+        'mixins',
+        'typography';
 
 header {
     height: 75px;
@@ -12,10 +14,8 @@ header {
     border-bottom: 1px solid $color-border;
 
     h3 a{
-        cursor: pointer;
+        @include heading-1 ($font-size-m, $font-weight:900, $color: $color-text);
         text-decoration: none;
-        color: $color-text;
-        font-weight: 900;
     }
 
     //------------------
@@ -34,7 +34,6 @@ header {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        @include heading-style (1.5rem, 400, $font-sans);
         transition: 0.3s ease;
         z-index: 1;
 
@@ -44,7 +43,7 @@ header {
         }
 
         a {
-            color: $color-text;
+            @include paragraph-style ($font-size: $font-size-l, $color: $color-text);
             text-decoration: none;
         }
 
