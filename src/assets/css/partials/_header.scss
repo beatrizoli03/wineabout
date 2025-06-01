@@ -1,5 +1,6 @@
 @import 'variables',
         'mixins',
+        'mediaqueries',
         'typography';
 
 header {
@@ -12,6 +13,12 @@ header {
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid $color-border;
+    position: fixed;
+    z-index: 2000;
+
+    @media #{$medium} {
+        padding: 0px 40px;
+    }
 
     h3 a{
         @include heading-1 ($font-size-m, $font-weight:900, $color: $color-text);

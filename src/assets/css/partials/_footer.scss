@@ -1,6 +1,7 @@
 @import 'variables',
         'mixins',
-        'typography';
+        'typography',
+        'mediaqueries';	
 
 footer {
     background-color: $color-text;
@@ -15,6 +16,10 @@ footer {
     h3{
         margin: 0;
         @include heading-1 ($font-size-m, $font-weight: 700, $color: $color-bg);
+
+        @media #{$medium} {
+            font-size: $font-size-lg;
+        }
     }
 
     ul{
@@ -40,12 +45,42 @@ footer {
         align-items: center;
     }
 
+    .footerlegal {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        align-items: center;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+
+        @media #{$medium} {
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+    }
+
     .copyright {
-        width: 180px;
+        width: 100%;
         display: flex;
         flex-direction: column;
         gap: 8px;
         margin-top: 20px;
+
+        @media #{$medium} {
+            width: 50%;
+            flex-direction: row;
+            justify-content: end;
+            gap: 24px;
+            margin: 0px;
+            padding-right: 40px;
+        }
+
+        @media #{$large} {
+            justify-content: end;
+        }
     }
 
     a{
@@ -55,13 +90,27 @@ footer {
     a p{
         text-decoration: none;
         color: $color-muted;
+
+        @media #{$medium} {
+            font-size: $font-size-base;
+        }
     }
 
     p {
         @include paragraph-style ($font-size: $font-size-xs, $color: $color-bg, $margin: 0);
+
+        @media #{$medium} {
+            font-size: $font-size-base;
+        }
     }
 
     .legalrights {
         width: 180px;
+
+        @media #{$medium} {
+            width: 100%;
+            text-align: left;
+            padding-left: 40px;;
+        }
     }
 }
