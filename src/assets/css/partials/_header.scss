@@ -1,6 +1,6 @@
 @import 'variables',
         'mixins',
-        'mediaqueries',
+        'mediaqueries', // Assuming this defines $medium and $large
         'typography';
 
 header {
@@ -8,25 +8,55 @@ header {
     width: 100%;
     background-color: $color-bg;
     padding: 0px 20px;
-    display: flex;
+    // display: flex; // Removed from here, moved to .header-inner for better control
     box-sizing: border-box;
-    justify-content: space-between;
-    align-items: center;
+    // justify-content: space-between; // Removed from here
+    display: flex;
+    align-items: center; // Kept as general alignment for header
     border-bottom: 1px solid $color-border;
     position: fixed;
     z-index: 2000;
 
-    @media #{$medium} {
-        padding: 0px 40px;
+    @media #{$large} {
+        padding: 0px 80px;
+
+        .logo-and-nav-group {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 40px; // For desktop: logo and nav
+            width: 100%; // Fill header width
+            max-width: 1440px; // Or your desired max width for content
+            margin: 0 auto; // Center the content on wider screens
+        }
     }
 
-    h3 a{
-        @include heading-1 ($font-size-m, $font-weight:900, $color: $color-text);
-        text-decoration: none;
+    // New: Container for desktop layout
+    .header-inner {
+        display: flex; // This will now control the main layout flow
+        justify-content: space-between; // For mobile: logo and ham-menu
+        align-items: center;
+        width: 100%; // Fill header width
+        max-width: 1440px; // Or your desired max width for content
+        margin: 0 auto; // Center the content on wider screens
+    }
+
+    h3.logo { // Target the h3 specifically
+        margin: 0; // Reset default h3 margin
+        display: flex;
+        a {
+            @include heading-1 ($font-size-m, $font-weight:900, $color: $color-text);
+            text-decoration: none;
+            // No changes here, looks good
+
+            @media #{$large} {
+                font-size: $font-size-l; // Adjust for larger screens
+            }
+        }
     }
 
     //------------------
-    // Off-Screen Menu Styles
+    // Off-Screen Menu Styles (Mobile Only)
     //------------------
 
     .off-screen-menu {
@@ -36,13 +66,20 @@ header {
         max-width: 300px;
         position: fixed;
         top: 0;
-        right: -450px;
+        right: -450px; // Ensure this is enough to hide it completely
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        transition: 0.3s ease;
-        z-index: 1;
+        transition: right 0.3s ease; // Use 'right' for transition
+        z-index: 1; // Needs to be lower than ham-menu but above content
+
+        // Add padding-top for content below the fixed header, if needed
+        padding-top: 75px; // Adjust based on header height, so content isn't under it
+
+        ul {
+            padding: 0; // Remove default ul padding
+        }
 
         li {
             list-style-type: none; 
@@ -54,27 +91,30 @@ header {
             text-decoration: none;
         }
 
-        a:hover{
+        a:hover {
             color: $color-hover;
         }
     }
-
 
     .off-screen-menu.active {
         right: 0;
     }
 
     //------------------
-    // Hamburger Menu Styles
+    // Hamburger Menu Styles (Mobile Only)
     //------------------
 
     .ham-menu {
         position: relative; 
         width: 30px; 
         height: 20px; 
-        margin-left: auto; 
+        // margin-left: auto; // This is handled by .header-inner flexbox now
         cursor: pointer;
-        z-index: 1;
+        z-index: 101; // Higher than off-screen-menu to be clickable
+
+        @media #{$large} {
+            display: none; // Hide on desktop
+        }
         
         span {
             width: 100%; 
@@ -88,7 +128,7 @@ header {
     }
 
     .ham-menu span:nth-child(1) {
-        top: 2%; 
+        top: 0; // Adjusted for better visual alignment with your JS transform
     }
 
     .ham-menu span:nth-child(2) {
@@ -97,7 +137,7 @@ header {
     }
 
     .ham-menu span:nth-child(3) {
-        top: 98%; 
+        top: 100%; // Adjusted for better visual alignment with your JS transform
         transform: translateY(-100%); 
     }
 
@@ -113,5 +153,114 @@ header {
     .ham-menu.active span:nth-child(3) {
         top: 50%;
         transform: translateY(-50%) rotate(-45deg); 
+    }
+
+    //------------------
+    // Main Navigation Styles (Desktop Only)
+    //------------------
+    .main-nav {
+        display: none; // Hidden by default (mobile first)
+
+        @media #{$large} {
+            display: block; // Show on desktop
+            //margin-left: auto; // Pushes the nav and subsequent elements to the right
+            //margin-right: 20px; // Space before the icons
+
+            ul {
+                display: flex; // Horizontal layout
+                list-style: none;
+                margin: 0;
+                padding: 0;
+
+                li {
+                    margin-right: 30px; // Spacing between navigation items
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                    a {
+                        text-decoration: none;
+                        @include paragraph-style ($font-size: $font-size-s, $color: $color-text); // Assuming a smaller font size for desktop nav
+                        font-weight: 500; // Adjust font weight as needed
+                        transition: color 0.3s ease;
+
+                        &:hover {
+                            color: $color-hover;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //------------------
+    // Header Icons and Language Selector Styles (Desktop Only)
+    //------------------
+    .header-icons {
+        display: none; // Hidden by default (mobile first)
+
+        @media #{$large} {
+            display: flex; // Show icons on desktop
+            align-items: center;
+            gap: 24px; // Spacing between icons
+
+            .icon-button {
+                background: none;
+                border: none;
+                cursor: pointer;
+                padding: 0;
+                display: flex; // For icon and count
+                align-items: center;
+                text-decoration: none; // For anchor tags
+                color: $color-text; // Default icon color
+
+                svg {
+                    width: 20px;
+                    height: 20px;
+                    stroke: currentColor; // Inherit color from parent
+                }
+
+                .count {
+                    font-family: $font-sans; // Assuming you want to use a sans-serif font for counts;
+                    font-size: $font-size-s; // Adjust based on your typography variables
+                    margin-left: 5px;
+                    color: $color-text;
+                }
+
+                &:hover {
+                    color: $color-hover; // Hover color for text/icons
+                }
+            }
+
+            .language-selector {
+                position: relative; // For custom arrow positioning
+                display: flex; // To align select and arrow
+                align-items: center;
+
+                select {
+                    border: none;
+                    background-color: transparent;
+                    font-size: $font-size-s; // Adjust based on your typography variables
+                    color: $color-text;
+                    appearance: none; // Remove default select arrow
+                    padding-right: 20px; // Space for custom arrow
+                    cursor: pointer;
+                    outline: none; // Remove outline on focus
+                    // You might need to adjust width or min-width for consistent sizing
+                }
+
+                .arrow-down {
+                    position: absolute;
+                    right: 0; // Adjust if you have padding in select
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 0;
+                    height: 0;
+                    border-left: 5px solid transparent;
+                    border-right: 5px solid transparent;
+                    border-top: 5px solid $color-text; // Down arrow color
+                    pointer-events: none; // Allow clicks to pass through to select
+                }
+            }
+        }
     }
 }

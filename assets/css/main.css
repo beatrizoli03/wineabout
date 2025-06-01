@@ -9,14 +9,11 @@ header {
   width: 100%;
   background-color: white;
   padding: 0px 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -24,18 +21,59 @@ header {
   position: fixed;
   z-index: 2000;
 }
-@media (min-width: 600px) {
+@media (min-width: 1024px) {
   header {
-    padding: 0px 40px;
+    padding: 0px 80px;
+  }
+  header .logo-and-nav-group {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 40px;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
   }
 }
-header h3 a {
+header .header-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+header h3.logo {
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+header h3.logo a {
   font-family: "Playfair Display", serif;
   font-size: 1.25rem;
   font-weight: 900;
   margin: 0;
   color: black;
   text-decoration: none;
+}
+@media (min-width: 1024px) {
+  header h3.logo a {
+    font-size: 1.5rem;
+  }
 }
 header .off-screen-menu {
   background-color: white;
@@ -58,9 +96,13 @@ header .off-screen-menu {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-transition: 0.3s ease;
-  transition: 0.3s ease;
+  -webkit-transition: right 0.3s ease;
+  transition: right 0.3s ease;
   z-index: 1;
+  padding-top: 75px;
+}
+header .off-screen-menu ul {
+  padding: 0;
 }
 header .off-screen-menu li {
   list-style-type: none;
@@ -85,9 +127,13 @@ header .ham-menu {
   position: relative;
   width: 30px;
   height: 20px;
-  margin-left: auto;
   cursor: pointer;
-  z-index: 1;
+  z-index: 101;
+}
+@media (min-width: 1024px) {
+  header .ham-menu {
+    display: none;
+  }
 }
 header .ham-menu span {
   width: 100%;
@@ -100,7 +146,7 @@ header .ham-menu span {
   transition: 0.3s ease;
 }
 header .ham-menu span:nth-child(1) {
-  top: 2%;
+  top: 0;
 }
 header .ham-menu span:nth-child(2) {
   top: 50%;
@@ -108,7 +154,7 @@ header .ham-menu span:nth-child(2) {
           transform: translateY(-50%);
 }
 header .ham-menu span:nth-child(3) {
-  top: 98%;
+  top: 100%;
   -webkit-transform: translateY(-100%);
           transform: translateY(-100%);
 }
@@ -124,6 +170,119 @@ header .ham-menu.active span:nth-child(3) {
   top: 50%;
   -webkit-transform: translateY(-50%) rotate(-45deg);
           transform: translateY(-50%) rotate(-45deg);
+}
+header .main-nav {
+  display: none;
+}
+@media (min-width: 1024px) {
+  header .main-nav {
+    display: block;
+  }
+  header .main-nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  header .main-nav ul li {
+    margin-right: 30px;
+  }
+  header .main-nav ul li:last-child {
+    margin-right: 0;
+  }
+  header .main-nav ul li a {
+    text-decoration: none;
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 130%;
+    margin: 0;
+    color: black;
+    font-weight: 500;
+    -webkit-transition: color 0.3s ease;
+    transition: color 0.3s ease;
+  }
+  header .main-nav ul li a:hover {
+    color: #a5a5a5;
+  }
+}
+header .header-icons {
+  display: none;
+}
+@media (min-width: 1024px) {
+  header .header-icons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 24px;
+  }
+  header .header-icons .icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-decoration: none;
+    color: black;
+  }
+  header .header-icons .icon-button svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+  }
+  header .header-icons .icon-button .count {
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+    margin-left: 5px;
+    color: black;
+  }
+  header .header-icons .icon-button:hover {
+    color: #a5a5a5;
+  }
+  header .header-icons .language-selector {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  header .header-icons .language-selector select {
+    border: none;
+    background-color: transparent;
+    font-size: 1rem;
+    color: black;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    padding-right: 20px;
+    cursor: pointer;
+    outline: none;
+  }
+  header .header-icons .language-selector .arrow-down {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid black;
+    pointer-events: none;
+  }
 }
 
 footer {
@@ -632,6 +791,10 @@ main .explore div button {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+}
+main .explore div button:hover {
+  background-color: #942A50;
+  cursor: pointer;
 }
 main .wine-shop h2 {
   font-family: "Playfair Display", serif;

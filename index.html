@@ -7,33 +7,71 @@
     <link rel="stylesheet" href="../assets/css/main.css">
 </head>
 <body>
-<header>
-    <h3 class="logo"><a href="/">Wineabout.</a></h3>
-    <div class="off-screen-menu">
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/store.html">Wines</a></li>
-            <li><a href="/contact.html">Contact</a></li>
-        </ul>
-    </div>
-    <nav>
-        <div class="ham-menu">
-        <span></span>
-        <span></span>
-        <span></span>
+<header class="main-header">
+    <div class="header-inner">
+        <div class="logo-and-nav-group">
+            <h3 class="logo"><a href="/">Wineabout.</a></h3>
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="/store.html">Wines</a></li>
+                    <li><a href="/contact.html">Contacts</a></li>
+                </ul>
+            </nav>
         </div>
-    </nav>
+
+        <div class="ham-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="off-screen-menu">
+            <ul>
+                <li><a href="/store.html">Wines</a></li>
+                <li><a href="/contact.html">Contacts</a></li>
+            </ul>
+        </div>
+
+        <div class="header-icons">
+            <button class="icon-button search-icon" aria-label="Search">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </button>
+            <a href="#" class="icon-button fav-icon" aria-label="Favorites">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                <span class="count">0</span>
+            </a>
+            <a href="#" class="icon-button cart-icon" aria-label="Cart">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-bag"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                <span class="count">2</span>
+            </a>
+            <div class="language-selector">
+                <select>
+                    <option value="en">en</option>
+                    <option value="pt">pt</option>
+                </select>
+                <span class="arrow-down"></span>
+            </div>
+        </div>
+    </div>
 
     <script>
         const hamMenu = document.querySelector('.ham-menu');
         const offScreenMenu = document.querySelector('.off-screen-menu');
+        const mainNav = document.querySelector('.main-nav');
 
         hamMenu.addEventListener('click', () => {
             offScreenMenu.classList.toggle('active');
             hamMenu.classList.toggle('active');
         });
-    </script>
 
+        window.addEventListener('resize', () => {
+            if (window.matchMedia("(min-width: 1024px)").matches) {
+                offScreenMenu.classList.remove('active');
+                hamMenu.classList.remove('active');
+            }
+        });
+    </script>
 </header>  <main>
     <div class="hero-image">
       <div>
