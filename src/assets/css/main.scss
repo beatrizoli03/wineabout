@@ -295,9 +295,9 @@ main{
 //-----------------------------
 
 .store-hero {
-    width: 100%;
+    width: auto;
     height: 100%;
-    padding: 40px 20px 40px 20px;
+    padding: 80px 0px 40px 20px;
     display: flex;
     flex-direction: column;
     justify-content: end;
@@ -308,6 +308,11 @@ main{
         flex-direction: row-reverse;
         align-items: center;
         width: auto;
+    }
+
+    @media #{$large} {
+        padding: 20px 0px 20px 80px;
+        height: 500px;
     }
 
     .hero-title {
@@ -323,10 +328,19 @@ main{
             text-align: left;
             width: 50%;
         }
+
+        @media #{$large} {
+            width: 40%;
+        }
     }
 
     h1 {
         @include heading-1 ($font-size: $font-size-xxl, $font-weight: 700, $color: $color-text);
+
+        @media #{$large} {
+            font-size: $font-size-xxxl;
+            padding-top: 75px;
+        }
     }
 
     h4 {
@@ -367,6 +381,10 @@ main{
     display: flex;
     justify-content: space-between;
     padding: 42px 20px 33px 20px;
+    
+    @media #{$medium} {
+        padding: 42px 40px 33px 40px;
+    }
 
     .sort-by {
         display: flex;
@@ -436,46 +454,184 @@ main{
     }
 
     .filters {
+    // ... (your existing button styles) ...
+    button { /* */
+        display: flex; /* */
+        gap: 8px; /* */
+        border: 0.2px solid $color-text; /* */
+        background-color: $color-bg; /* */
+        padding: 4px 16px; /* */
+        align-items: center; /* */
+        cursor: pointer; /* */
+        border-radius: 5px; /* */
+        transition: all 0.3s ease; /* */
 
-        button{
-            display: flex;
-            gap: 8px;
-            border: 0.2px solid $color-text;
-            background-color: $color-bg;
-            padding: 4px 16px;
-            align-items: center;
-
-            h4{
-            color: $color-text; 
+        h4 { /* */
+            color: $color-text; /* */
+            margin: 0; /* */
+        }
+        svg { /* */
+            width: 14px; /* */
+            height: 12px; /* */
+            fill: currentColor; /* */
+        }
+        &:hover { /* */
+            background-color: $color-text; /* */
+            h4 { /* */
+                color: $color-bg; /* */
             }
-
-            &:hover {
-                background-color: $color-text;
-                cursor: pointer;
-
-                path {
-                    fill: $color-bg;
-                }
-
-                h4 {
-                    color: $color-bg;
-                }
+            svg { /* */
+                fill: $color-bg; /* */
             }
         }
     }
 
+    // This button should only be visible on mobile/tablet
+    @media (max-width: ($large - 1px)) { // Apply below desktop breakpoint
+        display: block; // Show the filter toggle button on mobile/tablet
+    }
+
+    // Hide this button on desktop
+    @media #{$large} {
+        display: none;
+    }
+    }
+}
+
+
+// --- Filters Sidebar (the sliding panel) ---
+.filters-sidebar {
+    position: fixed;
+    top: 0;
+    right: -100%; // Start completely off-screen to the right
+    width: 100%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: $color-bg;
+    box-shadow: -3px 0 15px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease-in-out;
+    z-index: 1500;
+    overflow-y: auto;
+
+    display: none; // <--- KEY CHANGE: Hide by default on all screen sizes
+    flex-direction: column; // Keep for internal layout when active
+
+    &.active {
+        right: 0; // Slide into view
+        display: flex; // <--- KEY CHANGE: Show when active
+    }
+
+    .filters-header {
+        display: flex; /* */
+        justify-content: space-between; /* */
+        align-items: center; /* */
+        padding: 15px 20px; /* */
+        border-bottom: 1px solid $color-border; /* */
+        background-color: $color-bg; /* */
+        position: sticky; /* */
+        top: 0; /* */
+        z-index: 1; /* */
+
+        h4 { /* */
+            @include heading-1($font-size-m, $font-weight: 700, $color: $color-text); /* */
+            margin: 0; /* */
+        }
+
+        .close-filters-btn { /* */
+            background: none; /* */
+            border: none; /* */
+            font-size: 24px; /* */
+            cursor: pointer; /* */
+            color: $color-text; /* */
+            padding: 5px; /* */
+            &:hover { /* */
+                color: $color-hover; /* */
+            }
+        }
+    }
+
+    .filter-group { /* */
+        padding: 20px; /* */
+        border-bottom: 1px solid $color-border; /* */
+
+        &:last-child { /* */
+            border-bottom: none; /* */
+        }
+
+        h5 { /* */
+            @include paragraph-style($font-size-s, $color: $color-text); /* */
+            margin-top: 0; /* */
+            margin-bottom: 15px; /* */
+            font-weight: 900;
+        }
+
+        h6 { /* */
+            @include paragraph-style($font-size: $font-size-xs, $color: $color-text); /* */
+            margin-top: 0; /* */
+            margin-bottom: 10px; /* */
+        }
+
+        ul { /* */
+            list-style: none; /* */
+            padding: 0; /* */
+            margin: 0; /* */
+            li { /* */
+                margin-bottom: 10px; /* */
+                display: flex; /* */
+                justify-content: space-between; /* */
+                align-items: center; /* */
+                font-size: $font-size-s; /* */
+                color: $color-text; /* */
+                cursor: pointer; /* */
+
+                span { /* */
+                    font-weight: normal; /* */
+                }
+
+                &:hover { /* */
+                    color: $color-hover; /* */
+                }
+            }
+        }
+        .price-range { /* */
+            display: flex; /* */
+            justify-content: space-between; /* */
+            align-items: center; /* */
+            margin-top: 10px; /* */
+            span { /* */
+                font-size: $font-size-s; /* */
+                color: $color-text; /* */
+            }
+            input[type="range"] { /* */
+                flex-grow: 1; /* */
+                margin: 0 10px; /* */
+            }
+        }
+        .star-rating { /* */
+            display: flex; /* */
+            align-items: center; /* */
+            font-size: $font-size-s; /* */
+            color: $color-text; /* */
+            margin-bottom: 10px; /* */
+            .stars { /* */
+                color: gold; /* */
+                margin-right: 5px; /* */
+            }
+        }
+    }
 }
 
 .store-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 15px;
-  padding: 0px 10px 80px 10px;
+  padding: 0px 20px 80px 20px;
   height: auto;
   box-sizing: border-box;
 
   @media #{$medium} {
     grid-template-columns: 1fr 1fr 1fr;
+    padding: 0px 40px 80px 40px;
   }
 
     .wine-card {
@@ -798,5 +954,3 @@ main{
         }
     }
 }
-
-
