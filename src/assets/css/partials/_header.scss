@@ -1,6 +1,6 @@
 @import 'variables',
         'mixins',
-        'mediaqueries', // Assuming this defines $medium and $large
+        'mediaqueries',
         'typography';
 
 header {
@@ -8,11 +8,9 @@ header {
     width: 100%;
     background-color: $color-bg;
     padding: 0px 20px;
-    // display: flex; // Removed from here, moved to .header-inner for better control
     box-sizing: border-box;
-    // justify-content: space-between; // Removed from here
     display: flex;
-    align-items: center; // Kept as general alignment for header
+    align-items: center; 
     border-bottom: 1px solid $color-border;
     position: fixed;
     z-index: 2000;
@@ -24,33 +22,31 @@ header {
             display: flex;
             flex-direction: row;
             align-items: center;
-            gap: 40px; // For desktop: logo and nav
-            width: 100%; // Fill header width
-            max-width: 1440px; // Or your desired max width for content
-            margin: 0 auto; // Center the content on wider screens
+            gap: 40px; 
+            width: 100%; 
+            max-width: 1440px; 
+            margin: 0 auto; 
         }
     }
 
-    // New: Container for desktop layout
     .header-inner {
-        display: flex; // This will now control the main layout flow
-        justify-content: space-between; // For mobile: logo and ham-menu
+        display: flex; 
+        justify-content: space-between; 
         align-items: center;
-        width: 100%; // Fill header width
-        max-width: 1440px; // Or your desired max width for content
-        margin: 0 auto; // Center the content on wider screens
+        width: 100%; 
+        max-width: 1440px; 
+        margin: 0 auto; 
     }
 
-    h3.logo { // Target the h3 specifically
-        margin: 0; // Reset default h3 margin
+    h3.logo { 
+        margin: 0; 
         display: flex;
         a {
             @include heading-1 ($font-size-m, $font-weight:900, $color: $color-text);
             text-decoration: none;
-            // No changes here, looks good
 
             @media #{$large} {
-                font-size: $font-size-l; // Adjust for larger screens
+                font-size: $font-size-l; 
             }
         }
     }
@@ -66,17 +62,17 @@ header {
         max-width: 280px;
         position: fixed;
         top: 0;
-        right: -450px; // Ensure this is enough to hide it completely
+        right: -450px; 
         display: flex;
         flex-direction: column;
-        justify-content: flex-start; // Align items to the top
-        align-items: flex-start; // Align items to the left
+        justify-content: flex-start; 
+        align-items: flex-start; 
         padding: 80px 40px;
-        transition: right 0.3s ease; // Use 'right' for transition
-        z-index: 1; // Needs to be lower than ham-menu but above content
+        transition: right 0.3s ease; 
+        z-index: 1; 
 
         ul {
-            padding: 0; // Remove default ul padding
+            padding: 0; 
         }
 
         li {
@@ -135,12 +131,11 @@ header {
         position: relative; 
         width: 30px; 
         height: 20px; 
-        // margin-left: auto; // This is handled by .header-inner flexbox now
         cursor: pointer;
-        z-index: 101; // Higher than off-screen-menu to be clickable
+        z-index: 101; 
 
         @media #{$large} {
-            display: none; // Hide on desktop
+            display: none; 
         }
         
         span {
@@ -155,7 +150,7 @@ header {
     }
 
     .ham-menu span:nth-child(1) {
-        top: 0; // Adjusted for better visual alignment with your JS transform
+        top: 2%;
     }
 
     .ham-menu span:nth-child(2) {
@@ -164,7 +159,7 @@ header {
     }
 
     .ham-menu span:nth-child(3) {
-        top: 100%; // Adjusted for better visual alignment with your JS transform
+        top: 98%;
         transform: translateY(-100%); 
     }
 
@@ -186,28 +181,26 @@ header {
     // Main Navigation Styles (Desktop Only)
     //------------------
     .main-nav {
-        display: none; // Hidden by default (mobile first)
+        display: none; 
 
         @media #{$large} {
-            display: block; // Show on desktop
-            //margin-left: auto; // Pushes the nav and subsequent elements to the right
-            //margin-right: 20px; // Space before the icons
+            display: block; 
 
             ul {
-                display: flex; // Horizontal layout
+                display: flex;
                 list-style: none;
                 margin: 0;
                 padding: 0;
 
                 li {
-                    margin-right: 30px; // Spacing between navigation items
+                    margin-right: 30px;
                     &:last-child {
                         margin-right: 0;
                     }
                     a {
                         text-decoration: none;
-                        @include paragraph-style ($font-size: $font-size-s, $color: $color-text); // Assuming a smaller font size for desktop nav
-                        font-weight: 500; // Adjust font weight as needed
+                        @include paragraph-style ($font-size: $font-size-s, $color: $color-text); 
+                        font-weight: 500; 
                         transition: color 0.3s ease;
 
                         &:hover {
@@ -223,27 +216,27 @@ header {
     // Header Icons and Language Selector Styles (Desktop Only)
     //------------------
     .header-icons {
-        display: none; // Hidden by default (mobile first)
+        display: none; 
 
         @media #{$large} {
-            display: flex; // Show icons on desktop
+            display: flex; 
             align-items: center;
-            gap: 24px; // Spacing between icons
+            gap: 24px;
 
             .icon-button {
                 background: none;
                 border: none;
                 cursor: pointer;
                 padding: 0;
-                display: flex; // For icon and count
+                display: flex;
                 align-items: center;
-                text-decoration: none; // For anchor tags
-                color: $color-text; // Default icon color
+                text-decoration: none; 
+                color: $color-text; 
 
                 svg {
                     width: 20px;
                     height: 20px;
-                    stroke: currentColor; // Inherit color from parent
+                    stroke: currentColor; 
                 }
 
                 .count {
@@ -259,17 +252,17 @@ header {
             }
 
             .language-selector {
-                position: relative; // For custom arrow positioning
-                display: flex; // To align select and arrow
+                position: relative;
+                display: flex;
                 align-items: center;
 
                 select {
                     border: none;
                     background-color: transparent;
-                    font-size: $font-size-s; // Adjust based on your typography variables
+                    font-size: $font-size-s; 
                     color: $color-text;
-                    appearance: none; // Remove default select arrow
-                    padding-right: 20px; // Space for custom arrow
+                    appearance: none;
+                    padding-right: 20px; 
                     cursor: pointer;
                     outline: none;
                     margin-left: 5px;
@@ -279,23 +272,23 @@ header {
                     position: absolute;
                     right: 5px;
                     top: 40%;
-                    transform: translateY(-50%) rotate(45deg); // Rotate the whole element
+                    transform: translateY(-50%) rotate(45deg); 
                     width: 8px;   
                     height: 8px;  
                     border-top: none; 
                     border-right: 2px solid $color-text; 
                     border-left: none;
                     border-bottom: 2px solid $color-text;
-                    pointer-events: none; // Allow clicks to pass through to select
+                    pointer-events: none; 
 
-                    // Smooth transition for rotation if you want a hover effect
+                   
                     transition: transform 0.2s ease;
                     }
 
-                    // Point up on hover/focus of the select element:
+               
                     .language-selector select:hover + .arrow-down,
                     .language-selector select:focus + .arrow-down {
-                        transform: translateY(-50%) rotate(-135deg); // Rotate to point upwards
+                        transform: translateY(-50%) rotate(-135deg);
                     }
             }
         }

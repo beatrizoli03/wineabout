@@ -12,282 +12,279 @@
 //Home Page Styles
 //-----------------------------
 
-main{
-    .hero-image{
-        width: 100%;
-        min-height: calc(100vh - 75px);
-        background-image: url('/src/assets/images/wine-grapes.jpg');
-        background-size: 250%;
-        background-position: center;
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        color: $color-bg;
-        justify-content: center;
+.hero-image{
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('/src/assets/images/wine-grapes.jpg');
+    background-size: 250%;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: $color-bg;
+    justify-content: center;
+
+    @media #{$large} {
+        background-size: cover;
+        min-height: 100vh;
+    }
+
+    h1 {
+        @include heading-1 ($font-size: $font-size-xxxl, $font-weight: 700, $color: $color-bg);
+        margin: 0;
 
         @media #{$large} {
-            background-size: cover;
-            min-height: 100vh;
+            font-size: 6rem;
         }
-
-        h1 {
-            @include heading-1 ($font-size: $font-size-xxxl, $font-weight: 700, $color: $color-bg);
-            margin: 0;
-
-            @media #{$large} {
-                font-size: 6rem;
-            }
-        }
-
-        h3 {
-            @include heading-5 ($font-size: $font-size-xxl, $font-weight: 500, $color: $color-bg);
-        }
-
-        div:nth-child(1) {
-            align-self: center;
-        }
-
-        div:nth-child(2) {
-            position: absolute;
-            bottom: 24px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: $color-bg;
-            text-decoration: none;
-            gap: 8px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-
-            p{
-                color: $color-bg;
-                @include paragraph-style ($font-size: $font-size-xs, $color: $color-bg);
-            }
-        }
-
     }
 
-   .quote {
-        padding: 80px 50px;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
+    h3 {
+        @include heading-5 ($font-size: $font-size-xxl, $font-weight: 500, $color: $color-bg);
+    }
+
+    div:nth-child(1) {
         align-self: center;
-        gap: 16px;
-
-        @media #{$medium} {
-            padding: 120px 80px;
-        }
-
-        p:first-child {
-            @include paragraph-quote ($font-size: $font-size-lg, $color: $color-text);
-
-            @media #{$medium} {
-                font-size: $font-size-l;
-                max-width: 400px;
-                align-self: center;
-            }
-        }
-
-        p:last-child {
-            @include paragraph-style ($font-size: $font-size-m, $color: $color-muted);
-
-             @media #{$medium} {
-                font-size: $font-size-s;
-                max-width: 400px;
-                align-self: center;
-            }
-        }
     }
 
-    .oftheweek{
-        text-align: center;
-        padding: 0px 0px;
-
-        .wine-list {
-            display: grid;
-            gap: 2rem;
-            grid-template-columns: repeat(2, 1fr);
-            padding: 50px 30px;
-
-            .wine-item:nth-child(3),
-            .wine-item:nth-child(4) {
-            display: none;
-            }
-
-            @media #{$medium} {
-            padding: 80px 120px;
-            grid-template-columns: repeat(3, 1fr);
-
-                .wine-item:nth-child(3) {
-                    display: flex;
-                }
-                .wine-item:nth-child(4) {
-                display: none;
-                }
-            }
-
-            @media #{$large} {
-                grid-template-columns: repeat(4, 1fr);
-
-                .wine-item:nth-child(4) {
-                display: flex;
-                }
-            }
-                
-
-            .wine-item {
-                display: flex;
-                flex-direction: column;
-                gap: 24px;
-                width: 100%;
-                padding: 0 10px;
-
-                span {
-                    display: flex;
-                    height: 1px;
-                    background-color: #8a8180;
-                }
-
-                img{
-                    height: 200px;
-                    object-fit: contain;
-                }
-            }
-        }
-
-        .img-quinta {
-            overflow: hidden;
-
-            img {
-                width: 100%;
-                height: 505px;
-                object-fit: cover;
-                transform: scale(1.2);
-            }
-        }
-    }
-
-    .explore {
-        padding: 80px 20px;
+    div:nth-child(2) {
+        position: absolute;
+        bottom: 24px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: $color-bg;
+        text-decoration: none;
+        gap: 8px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 64px;
 
-        @media #{$large} {
-            padding: 80px 80px;
+        p{
+            color: $color-bg;
+            @include paragraph-style ($font-size: $font-size-xs, $color: $color-bg);
+        }
+    }
 
-             .explore-item {
-                    gap: 80px;
-                }
+}
+
+.quote {
+    padding: 80px 50px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    gap: 16px;
+
+    @media #{$medium} {
+        padding: 120px 80px;
+    }
+
+    p:first-child {
+        @include paragraph-quote ($font-size: $font-size-l, $color: $color-text);
+
+        @media #{$medium} {
+            max-width: 400px;
+            align-self: center;
+        }
+    }
+
+    p:last-child {
+        @include paragraph-style ($font-size: $font-size-s, $color: $color-muted);
+
+            @media #{$medium} {
+            max-width: 400px;
+            align-self: center;
+        }
+    }
+}
+
+.oftheweek{
+    text-align: center;
+    padding: 0px 0px;
+
+    .wine-list {
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 50px 30px;
+
+        .wine-item:nth-child(3),
+        .wine-item:nth-child(4) {
+        display: none;
         }
 
-        div {
-            font-family: Inter, sans-serif;
+        @media #{$medium} {
+        padding: 80px 120px;
+        grid-template-columns: repeat(3, 1fr);
+
+            .wine-item:nth-child(3) {
+                display: flex;
+            }
+            .wine-item:nth-child(4) {
+            display: none;
+            }
+        }
+
+        @media #{$large} {
+            grid-template-columns: repeat(4, 1fr);
+
+            .wine-item:nth-child(4) {
+            display: flex;
+            }
+        }
+            
+
+        .wine-item {
             display: flex;
             flex-direction: column;
-            gap: 5px;
-            margin-top: 20px;
+            gap: 24px;
+            width: 100%;
+            padding: 0 10px;
 
-            @media #{$large} {
-                flex-direction: row-reverse;
-
-                .explore-text {
-                    flex-direction: column;
-                    text-align: left;
-                    justify-content: center;
-                    width: 50%;
-                   
-                }
-
-
+            span {
+                display: flex;
+                height: 1px;
+                background-color: #8a8180;
             }
 
             img{
-                width: 100%;
-                height: 280px;
-                object-fit: cover;
-
-                @media #{$large} {
-                    height: 400px;
-                }
-            }
-
-            p{
-                padding-top: 10px;
-                margin: 0px 0;
-            }
-
-            button {
-                margin-top: 20px;
-                font-family: Inter, sans-serif;
-                font-size: 0.875rem;
-                font-weight: 400;
-                padding: 12px 28px;
-                background-color: black;
-                color: white;
-                border: none;
-                width: fit-content;
-
-                &:hover {
-                    background-color: $color-primary;
-                    cursor: pointer;
-                }
+                height: 200px;
+                object-fit: contain;
             }
         }
     }
 
-    .wine-shop{
+    .img-quinta {
+        overflow: hidden;
 
-        h2 {
-            @include heading-1 ($font-size: $font-size-xxl, $font-weight: 700, $color: $color-text);
-
-            @media #{$large} {
-                font-size: $font-size-xxxl;
-                font-weight: 400;
-            }
+        img {
+            width: 100%;
+            height: 505px;
+            object-fit: cover;
+            transform: scale(1.2);
         }
+    }
+}
+
+.explore {
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 64px;
+
+    @media #{$large} {
+        padding: 80px 80px;
+
+            .explore-item {
+                gap: 80px;
+            }
+    }
+
+    div {
+        font-family: Inter, sans-serif;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        margin-top: 20px;
 
         @media #{$large} {
-            p {
-                max-width: 500px;
+            flex-direction: row-reverse;
+
+            .explore-text {
+                flex-direction: column;
+                text-align: left;
+                justify-content: center;
+                width: 50%;
+                
             }
+
+
         }
 
         img{
             width: 100%;
-            height: 325px;
+            height: 280px;
             object-fit: cover;
-        }
 
-        div {
-            text-align: center;
-            padding: 56px 40px;
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-            align-items: center;
-
-            button{
-                width: fit-content;
-                margin-top: 8px;
-                font-family: $font-sans, sans-serif;
-                font-size: $font-size-base;
-                font-weight: 400;
-                padding: 12px 28px;
-                background-color: black;
-                color: white;
-                border: none;
-
-                &:hover {
-                    background-color: $color-primary;
-                    cursor: pointer;
-                }
+            @media #{$large} {
+                height: 400px;
             }
         }
+
+        p{
+            padding-top: 10px;
+            margin: 0px 0;
+        }
+
+        button {
+            margin-top: 20px;
+            font-family: Inter, sans-serif;
+            font-size: 0.875rem;
+            font-weight: 400;
+            padding: 12px 28px;
+            background-color: black;
+            color: white;
+            border: none;
+            width: fit-content;
+
+            &:hover {
+                background-color: $color-primary;
+                cursor: pointer;
+            }
+        }
+    }
 }
+
+.wine-shop{
+
+    h2 {
+        @include heading-1 ($font-size: $font-size-xxl, $font-weight: 700, $color: $color-text);
+
+        @media #{$large} {
+            font-size: $font-size-xxxl;
+            font-weight: 400;
+        }
+    }
+
+    @media #{$large} {
+        p {
+            max-width: 500px;
+        }
+    }
+
+    img{
+        width: 100%;
+        height: 325px;
+        object-fit: cover;
+    }
+
+    div {
+        text-align: center;
+        padding: 56px 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        align-items: center;
+
+        button{
+            width: fit-content;
+            margin-top: 8px;
+            font-family: $font-sans, sans-serif;
+            font-size: $font-size-base;
+            font-weight: 400;
+            padding: 12px 28px;
+            background-color: black;
+            color: white;
+            border: none;
+
+            &:hover {
+                background-color: $color-primary;
+                cursor: pointer;
+            }
+        }
+    }
 }
+
 
 
 //-----------------------------
@@ -386,6 +383,10 @@ main{
         padding: 42px 40px 33px 40px;
     }
 
+    @media #{$large} {
+        padding: 42px 80px 33px 80px;
+    }
+
     .sort-by {
         display: flex;
         align-items: center;
@@ -439,6 +440,7 @@ main{
                 color: black;
                 text-decoration: none;
                 text-align: left;
+                font-family: $font-sans, sans-serif;
 
                 &:hover {
                     color: $color-muted;
@@ -454,169 +456,76 @@ main{
     }
 
     .filters {
-    // ... (your existing button styles) ...
-    button { /* */
-        display: flex; /* */
-        gap: 8px; /* */
-        border: 0.2px solid $color-text; /* */
-        background-color: $color-bg; /* */
-        padding: 4px 16px; /* */
-        align-items: center; /* */
-        cursor: pointer; /* */
-        border-radius: 5px; /* */
-        transition: all 0.3s ease; /* */
+        button { 
+            display: flex; 
+            gap: 8px;  
+            border: 0.2px solid $color-text; 
+            background-color: $color-bg; 
+            padding: 4px 16px; 
+            align-items: center; 
+            cursor: pointer;
+            border-radius: 5px; 
+            transition: all 0.3s ease; 
 
-        h4 { /* */
-            color: $color-text; /* */
-            margin: 0; /* */
-        }
-        svg { /* */
-            width: 14px; /* */
-            height: 12px; /* */
-            fill: currentColor; /* */
-        }
-        &:hover { /* */
-            background-color: $color-text; /* */
-            h4 { /* */
-                color: $color-bg; /* */
+            h4 { 
+                color: $color-text; 
+                margin: 0; 
             }
-            svg { /* */
-                fill: $color-bg; /* */
+            svg { 
+                width: 14px; 
+                height: 12px; 
+                fill: currentColor;
+            }
+
+            &:hover { 
+                background-color: $color-text; 
+                h4 {
+                    color: $color-bg;
+                }
+                svg {
+                    fill: $color-bg;
+                }
             }
         }
-    }
 
-    // This button should only be visible on mobile/tablet
-    @media (max-width: ($large - 1px)) { // Apply below desktop breakpoint
-        display: block; // Show the filter toggle button on mobile/tablet
-    }
 
-    // Hide this button on desktop
-    @media #{$large} {
-        display: none;
-    }
+        @media (max-width: ($large - 1px)) { 
+            display: block;
+        }
+
+        @media #{$large} {
+            display: none;
+        }
     }
 }
 
-
-// --- Filters Sidebar (the sliding panel) ---
-.filters-sidebar {
-    position: fixed;
-    top: 0;
-    right: -100%; // Start completely off-screen to the right
+.store {
     width: 100%;
-    max-width: 300px;
-    height: 100vh;
-    background-color: $color-bg;
-    box-shadow: -3px 0 15px rgba(0, 0, 0, 0.2);
-    transition: right 0.3s ease-in-out;
-    z-index: 1500;
-    overflow-y: auto;
-
-    display: none; // <--- KEY CHANGE: Hide by default on all screen sizes
-    flex-direction: column; // Keep for internal layout when active
-
-    &.active {
-        right: 0; // Slide into view
-        display: flex; // <--- KEY CHANGE: Show when active
-    }
-
-    .filters-header {
-        display: flex; /* */
-        justify-content: space-between; /* */
-        align-items: center; /* */
-        padding: 15px 20px; /* */
-        border-bottom: 1px solid $color-border; /* */
-        background-color: $color-bg; /* */
-        position: sticky; /* */
-        top: 0; /* */
-        z-index: 1; /* */
-
-        h4 { /* */
-            @include heading-1($font-size-m, $font-weight: 700, $color: $color-text); /* */
-            margin: 0; /* */
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: space-between;
+    
+    .filters-sidebar {
+            display: none; 
+            right: 0; 
         }
 
-        .close-filters-btn { /* */
-            background: none; /* */
-            border: none; /* */
-            font-size: 24px; /* */
-            cursor: pointer; /* */
-            color: $color-text; /* */
-            padding: 5px; /* */
-            &:hover { /* */
-                color: $color-hover; /* */
-            }
+    @media #{$medium} {
+        
+        .filters-sidebar {
+            display: none; 
+            right: 0; 
         }
     }
 
-    .filter-group { /* */
-        padding: 20px; /* */
-        border-bottom: 1px solid $color-border; /* */
+    @media #{$large} {
+        padding: 0px 80px 80px 80px;
 
-        &:last-child { /* */
-            border-bottom: none; /* */
-        }
-
-        h5 { /* */
-            @include paragraph-style($font-size-s, $color: $color-text); /* */
-            margin-top: 0; /* */
-            margin-bottom: 15px; /* */
-            font-weight: 900;
-        }
-
-        h6 { /* */
-            @include paragraph-style($font-size: $font-size-xs, $color: $color-text); /* */
-            margin-top: 0; /* */
-            margin-bottom: 10px; /* */
-        }
-
-        ul { /* */
-            list-style: none; /* */
-            padding: 0; /* */
-            margin: 0; /* */
-            li { /* */
-                margin-bottom: 10px; /* */
-                display: flex; /* */
-                justify-content: space-between; /* */
-                align-items: center; /* */
-                font-size: $font-size-s; /* */
-                color: $color-text; /* */
-                cursor: pointer; /* */
-
-                span { /* */
-                    font-weight: normal; /* */
-                }
-
-                &:hover { /* */
-                    color: $color-hover; /* */
-                }
-            }
-        }
-        .price-range { /* */
-            display: flex; /* */
-            justify-content: space-between; /* */
-            align-items: center; /* */
-            margin-top: 10px; /* */
-            span { /* */
-                font-size: $font-size-s; /* */
-                color: $color-text; /* */
-            }
-            input[type="range"] { /* */
-                flex-grow: 1; /* */
-                margin: 0 10px; /* */
-            }
-        }
-        .star-rating { /* */
-            display: flex; /* */
-            align-items: center; /* */
-            font-size: $font-size-s; /* */
-            color: $color-text; /* */
-            margin-bottom: 10px; /* */
-            .stars { /* */
-                color: gold; /* */
-                margin-right: 5px; /* */
-            }
+        .filters-sidebar {
+            display: block; 
+            right: 0; 
         }
     }
 }
@@ -667,14 +576,14 @@ main{
                 width: fit-content;
 
                 p {
-                    white-space: nowrap;
+                    color: currentColor;
                 }
 
                 div {
                     width: 8px;
                     height: 8px;
                     border-radius: 100%;
-                    background-color: currentColor; // usa a cor herdada
+                    background-color: currentColor;
                 }
             }
         }
@@ -821,7 +730,7 @@ main{
     gap: 20px;
     padding: 0px 20px 80px 20px;
 
-     @media #{$medium} {
+    @media #{$medium} {
             padding: 0px 40px 80px 40px;
         }
 
@@ -894,7 +803,7 @@ main{
             }
         }
 
-    }
+        }
 
     .contact-form {
         display: flex;
