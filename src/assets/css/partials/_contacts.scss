@@ -1,0 +1,233 @@
+//-----------------------------
+//Contact Page Styles
+//-----------------------------
+
+.contact-hero {
+    width: 100%;
+    min-height: calc(440px - 75px);
+    background-image: url('/src/assets/images/contact-quinta-img.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    position: relative;
+
+    h1 {
+        @include heading-1 ($font-size: $font-size-xxl, $font-weight: 700, $color: $color-bg);
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        bottom: 40px;
+        left: 20px;
+
+        @media #{$medium} {
+            font-size: $font-size-xxl;
+            left: 40px;
+        }
+
+        @media #{$large} {
+            font-size: $font-size-xxxl;
+            left: 80px;
+        }
+    }  
+}
+
+@media #{$large} {
+
+    .contact-section {
+        display: flex;
+        flex-direction: row;
+        padding-top: 80px;
+        padding-bottom: 80px;
+        padding-right: 80px;
+        align-items: center;
+
+        .contact-section-img {
+        width: 50%;
+        height: 500px;
+        background-image: url('/src/assets/images/winecellar.png');
+        background-size: cover;
+        background-position: center;
+        }
+
+        .contact-header {
+            width: 70%;
+            height: auto;
+        }
+    }
+}
+
+.contact-header {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 20px;
+    gap: 32px;
+
+    @media #{$medium} {
+            padding: 40px 40px;
+        }
+
+    @media #{$large} {
+            padding: 80px 80px 40px 80px;
+        }
+
+    .contact-header-title {
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+        
+        h2 {
+            @include heading-1 ($font-size: $font-size-lg, $font-weight: 700, $color: $color-text);
+            margin: 0;
+        }
+    }
+
+    p {
+        margin: 0;
+        max-width: 600px;
+
+        @media #{$large} {
+            font-size: $font-size-s;
+        }
+    }
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0px 20px 80px 20px;
+
+    @media #{$medium} {
+            padding: 0px 40px 80px 40px;
+        }
+
+    @media #{$large} {
+            padding: 0px 80px 80px 80px;
+        }
+
+    .contact-info-item {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        p {
+            margin: 0;
+
+            @media #{$medium} {
+                font-size: $font-size-s;
+            }
+        }
+
+        .contact-info .contact-info-item:nth-child(3) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .address-text {
+            gap: 2px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .address-text :nth-child(2) {
+            color: $color-muted;
+            width: 150px;
+        }
+    }
+}
+
+.contact-form-container {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        padding: 64px 20px;
+        background-color: $color-bg-secondary;
+
+        @media #{$medium} {
+            padding: 80px 80px;
+        }
+
+        @media #{$large} {
+            padding: 80px 300px;
+        }
+
+        .contact-form-header {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        h2 {
+            @include heading-1 ($font-size: $font-size-lg, $font-weight: 700, $color: $color-text);
+
+        }
+
+        p {
+            color: $color-muted;
+
+            @media #{$medium} {
+                font-size: $font-size-s;
+            }
+        }
+
+        }
+
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        form {
+            display: flex;
+            flex-direction: column;
+
+            @media #{$medium} {
+                gap: 8px;
+            }
+
+            input, textarea {
+                padding: 12px;
+                border: none;
+                border-radius: 8px;
+                background-color: $color-border;
+                @include paragraph-style ($font-size: $font-size-xs, $color: $color-hover);
+
+                &:focus {
+                    border-color: $color-primary;
+                    outline: none;
+                }
+
+                @media #{$medium} {
+                    font-size: $font-size-s;
+                    padding: 16px;
+                }
+            }
+
+            input, textarea {
+                margin-bottom: 15px;
+            }
+
+            label {
+                @include paragraph-style ($font-size: $font-size-base, $color: $color-text);
+            }
+
+            button {
+                background-color: $color-text;
+                text-transform: uppercase;
+                padding: 12px 24px;
+                border: none;
+                cursor: pointer;
+                @include paragraph-style ($font-size: $font-size-base, $color: $color-bg);
+
+                @media #{$medium} {
+                    padding: 16px 24px;
+                }
+
+                &:hover {
+                    background-color: $color-primary;
+                }
+            }
+        }
+    }
+}

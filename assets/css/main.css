@@ -1,6 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
@@ -1168,6 +1166,146 @@ p {
 .store .filters-sidebar {
   display: none;
   right: 0;
+}
+.store .filters-sidebar .filter-group {
+  padding-bottom: 30px;
+}
+.store .filters-sidebar h5 {
+  padding-bottom: 20px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 800;
+  line-height: 130%;
+  margin: 0;
+  color: black;
+}
+.store .filters-sidebar ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 8px;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 130%;
+  margin: 0;
+  color: black;
+}
+.store .filters-sidebar ul li:first-child {
+  color: black;
+}
+.store .filters-sidebar ul li {
+  color: #a5a5a5;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.store .filters-sidebar h6 {
+  padding-bottom: 20px;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 130%;
+  margin: 0;
+  color: black;
+}
+.store .filters-sidebar .price-range {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 8px;
+  /* Linha de fundo (não preenchida) */
+  /* Parte azul (preenchida) */
+  /* "Truque" para a parte azul (só funciona com WebKit) */
+  /* Firefox */
+}
+.store .filters-sidebar .price-range .slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  margin: 0;
+  background: transparent; /* necessário para customização */
+}
+.store .filters-sidebar .price-range .slider::-webkit-slider-runnable-track {
+  height: 3px;
+  background: #942A50; /* cor da linha não preenchida */
+  border-radius: 3px;
+}
+.store .filters-sidebar .price-range .slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  background: #942A50; /* cor do botão */
+  margin-top: -2px; /* alinha com a track */
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+}
+.store .filters-sidebar .price-range .slider::-webkit-slider-runnable-track {
+  background: -webkit-gradient(linear, left top, right top, from(#942A50), color-stop(50%, #942A50), color-stop(50%, #C994A7), color-stop(50%, #C994A7));
+  background: linear-gradient(to right, #942A50 0%, #942A50 50%, #C994A7 50%, #C994A7 50%);
+}
+.store .filters-sidebar .price-range .slider::-moz-range-track {
+  background: #ccc;
+  height: 6px;
+  border-radius: 3px;
+}
+.store .filters-sidebar .price-range .slider::-moz-range-progress {
+  background: #942A50;
+  height: 6px;
+  border-radius: 3px;
+}
+.store .filters-sidebar .price-range .slider::-moz-range-thumb {
+  background: #942A50;
+  border: none;
+  border-radius: 50%;
+  height: 16px;
+  width: 16px;
+}
+.store .filters-sidebar .price-range div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 130%;
+  margin: 0;
+  color: #a5a5a5;
+}
+.store .filters-sidebar .filter-group:nth-child(3) li {
+  color: #a5a5a5;
+}
+.store .filters-sidebar .filter-group:nth-child(4) div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 8px;
+}
+.store .filters-sidebar .filter-group:nth-child(4) div span {
+  color: #942A50;
+  font-size: 1rem;
 }
 @media (min-width: 600px) {
   .store .filters-sidebar {

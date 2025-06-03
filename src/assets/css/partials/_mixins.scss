@@ -1,6 +1,3 @@
-@import 'variables',
-        'typography';
-
 // ------------------------------------
 // Mixins 
 // ------------------------------------
@@ -44,10 +41,10 @@
   color: $color; 
 }
 
-@mixin paragraph-style($font-size: $font-size-base, $color: $color-text, $margin: 0) {
+@mixin paragraph-style($font-size: $font-size-base, $font-weight: 400, $color: $color-text, $margin: 0) {
   font-family: $font-sans;
   font-size: $font-size;
-  font-weight: 400;
+  font-weight: $font-weight;
   line-height: 130%;
   margin: $margin;
   color: $color;
