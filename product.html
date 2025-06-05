@@ -8,7 +8,7 @@
 </head>
 <body>
 <header class="main-header">
-    <div class="header-inner">
+    <div class="header-inner fade-in">
         <div class="logo-and-nav-group">
             <h3 class="logo"><a href="/">Wineabout.</a></h3>
 
@@ -156,7 +156,7 @@
         });
     </script>
 </header>    <main>
-        <div class="product-intro">
+        <div class="product-intro fade-in-section">
             <div class="ref">
                 <p>Ref.:2178148</p>
                 <div>
@@ -237,7 +237,7 @@
                 </div>
             </div>
         </div>
-        <div class="details">
+        <div class="details fade-in-section">
             <div class="wine-characteristics">
                 <h4>Wine characteristics:</h4>
                 <div>
@@ -323,7 +323,7 @@
                 </div>
             </div>
         </div>
-        <div class="other-choices">
+        <div class="other-choices fade-in-section">
             <h4>Related Wines</h4>
             <h1>Other choises for you</h1>
             <div class="store-list">
@@ -369,7 +369,7 @@
             </div>
         </div>
     </main>
-<footer>
+<footer class="fade-in-section">
     <h3 class="logo">Wineabout.</h3>
     <div class="menufooter">
         <ul>
@@ -410,5 +410,49 @@
                     <p>Copyright © 2025. Wineabout. All rights reserved.</p>
             </div>
         </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll(".fade-in-section");
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  });
+</script>
+
 </footer></body>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll(".fade-in-section");
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  });
+</script>
+
 </html>

@@ -10,7 +10,7 @@
   <!--@import "partials/header"-->
   <main>
     <div class="hero-image">
-      <div>
+      <div class="fade-in">
         <h1 class="logo">Wineabout.</h1>
         <h3>Best wines of the mediterranean</h3>
       </div>
@@ -22,11 +22,11 @@
         <p>Scroll Down</p>
       </div>
     </div>
-    <div class="quote">
+    <div class="quote fade-in-section">
       <p>A wine is ready when you can't bear to wait for it any longer.</p>
       <p class="author">– Karen MacNeil, Author of “The Wine Bible”</p>
     </div>  
-    <div class="oftheweek">
+    <div class="oftheweek fade-in-section">
       <h4>Experts pick of the week</h4>
       <h2>Portugal Wines</h2>
       <div class="wine-list">
@@ -51,12 +51,12 @@
           <p>Duas Quintas, 2016 Douro, 75cl</p>
         </div>
       </div>
-      <div class="img-quinta">
+      <div class="img-quinta fade-in-section">
         <img src="/src/assets/images/vineyard-mansion.jpg" alt="Mansion in a Vineyard">
       </div>
     </div>
     <div class="explore">
-      <div class="explore-item">
+      <div class="explore-item fade-in-section">
         <img src="/src/assets/images/winecellar.png" alt="Image of a Wine Cellar">
         <div class="explore-text">
           <h4>Explore</h4>
@@ -65,7 +65,7 @@
           <button>View Wineries</button>
         </div>
       </div>
-      <div class="explore-item">
+      <div class="explore-item fade-in-section">
         <img src="/src/assets/images/contact-quinta-img.png" alt="Image of a Vineyard at Sunset">
         <div class="explore-text">
           <h4>Explore</h4>
@@ -74,7 +74,7 @@
           <button>View Harvests</button>
         </div>
       </div>
-      <div class="explore-item">
+      <div class="explore-item fade-in-section">
         <img src="/src/assets/images/balcony-img.png" alt="Image of a Balcony at a Vineyard at Sunset">
         <div class="explore-text">
           <h4>Explore</h4>
@@ -84,10 +84,10 @@
         </div>
       </div>
     </div>
-    <div class="wine-shop">
+    <div class="wine-shop fade-in-section">
       <img src="/src/assets/images/wine-shop.jpg" alt="Wine Shop">
       <div>
-        <h2 class="shop">Shop</h2>
+        <h2 class="shop fade-in-section">Shop</h2>
         <p>Explore our collection of fine whine. Curated to deliver the best of this Portugal gem to provide memorable experiences.</p>
         <button>Shop Now</button>
       </div>
@@ -95,4 +95,26 @@
   </main>
   <!--@import "partials/footer"-->
 </body>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll(".fade-in-section");
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  });
+</script>
+
 </html>

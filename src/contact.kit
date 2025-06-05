@@ -10,11 +10,11 @@
   <!--@import "partials/header"-->
   <main>
     <div class="contact-hero">
-      <div class="page-title">
+      <div class="page-title fade-in">
         <h1>Contact Us</h1>
       </div>
     </div>
-    <div class="contact-section">
+    <div class="contact-section fade-in-section">
         <div class="contact-section-info">
             <div class="contact-header">
                 <div class="contact-header-title">
@@ -62,11 +62,11 @@
         <div class="contact-section-img"></div>
     </div>
     <div class="contact-form-container">
-        <div class="contact-form-header">
+        <div class="contact-form-header fade-in-section">
             <h2>Send us a message</h2>
             <p>We aim to respond to all inquiries within 24 hours.</p>
         </div>
-        <div class="contact-form">
+        <div class="contact-form fade-in-section">
             <form action="#" method="post">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" required placeholder="Your name here">
@@ -81,4 +81,26 @@
   </main>
   <!--@import "partials/footer"-->
 </body>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll(".fade-in-section");
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  });
+</script>
+
 </html>

@@ -1,4 +1,4 @@
-<footer>
+<footer class="fade-in-section">
     <h3 class="logo">Wineabout.</h3>
     <div class="menufooter">
         <ul>
@@ -39,4 +39,26 @@
                     <p>Copyright © 2025. Wineabout. All rights reserved.</p>
             </div>
         </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll(".fade-in-section");
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  });
+</script>
+
 </footer>
