@@ -1,0 +1,541 @@
+main {
+    padding-top: 75px;
+
+    .ref{
+        padding: 20px 20px 0 20px;
+        display: flex;
+        justify-content: space-between;
+        
+        p {
+            color: $color-hover;
+        }
+
+        div {
+            display: flex;
+            gap: 20px;
+
+            img {
+                width: 26px;
+            }
+        }
+
+        @media #{$medium} {
+            padding-top: 50px;
+        }
+    }
+
+    @media #{$large} {
+        .product-intro {
+            display: flex;
+            gap: 15px;
+            padding: 0 80px;
+            align-items: center;
+            justify-content: space-between;
+
+            .product-hero {
+                width: 50%;
+            }
+
+            .product-tittle {
+                width: 50%;
+                justify-content: space-between;
+
+                .local {
+                    padding: 0;
+                }
+
+                .tittle {
+                    padding: 0;
+                }
+            }
+
+        }
+    }
+
+    .product-hero {
+        display: flex;
+
+        .map {
+            padding-top: 25px;
+            display: none;
+
+            @media #{$large} {
+                width: 40%;
+            }
+
+            .local1 {
+                display: flex;
+                gap: 15px;
+                padding: 20px 20px;
+                align-items: center;
+
+                @media #{$large} {
+                    padding-left: 0;
+                }
+
+                img {
+                    width: 35px;
+                }
+
+                p:nth-child(1) {
+                    @include paragraph-style($font-size: $font-size-s, $font-weight:700);
+                }
+
+                p:nth-child(2) {
+                    @include paragraph-style($font-size: $font-size-base, $color:$color-muted, $font-weight:400);
+                }
+            }
+
+            img:nth-child(2) {
+                padding-left: 60px;
+
+                @media #{$large} {
+                    padding-left: 40px;
+                }
+            }
+
+            .wine-characteristics {
+                padding-left: 20px;
+                padding-top: 30px;
+
+                @media #{$large} {
+                    padding-left: 0;
+                }
+
+                div{
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    padding-bottom: 10px;
+
+                    p{
+                        color: $color-hover2;
+                    }
+
+                    path {
+                        fill: $color-hover2;
+                    }
+                }
+
+                div:last-child {
+                    align-items: start;
+                    svg {
+                        width: 37px;
+                        padding-left: 2px;
+                    }
+                }
+            }
+
+            @media #{$medium} {
+                display: block;
+                max-width: 30%;
+            }
+        }
+
+        .produto-image {
+            position: relative;
+            width: 100%;
+            min-width: 100px;
+            height: 500px;
+            overflow: hidden; 
+
+            img {
+                position: absolute; 
+                top: 50%;
+                left: 50%;
+                width: 250px;
+                object-fit: cover; 
+                z-index: 1; 
+                display: block;
+                transform: translate(-50%, -50%); 
+            }
+
+            div{
+                width: 200px;
+                height: 200px;
+                border-radius: 9999px;
+                background: $color-rose;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 0;
+            }  
+        }
+    }
+
+    .product-tittle {
+
+        .ref2 {
+            display: none;
+        }
+
+        .local {
+            display: flex;
+            gap: 15px;
+            padding: 20px 20px;
+            align-items: center;
+
+            @media #{$medium} {
+                padding: 5px 20px;
+            }
+
+            img {
+                width: 35px;
+
+                @media #{$medium} {
+                    display: none;
+                }
+            }
+
+            p:nth-child(1) {
+                @include paragraph-style($font-size: $font-size-s, $font-weight:700);
+                
+                @media #{$medium} {
+                    display: none;
+                }
+            }
+
+            p:nth-child(2) {
+                @include paragraph-style($font-size: $font-size-base, $color:$color-muted, $font-weight:400);
+                
+                @media #{$medium} {
+                    display: none;
+                }
+            }
+
+            p:nth-child(3) {
+                display: none;
+                @include paragraph-style($font-size: $font-size-s, $color:$color-muted, $font-weight:400);
+
+                @media #{$medium} {
+                    display: block;
+                }
+            }
+        }
+
+        .tittle {
+            padding: 0 20px 40px 20px;
+
+            h1 {
+                @include heading-1($font-size: $font-size-lg, $font-weight: 600)
+            }
+
+            .stars {
+                display: flex;
+                gap: 10px;
+                align-items: center;
+                padding: 10px 0 30px 0;
+                
+                p {
+                    @include paragraph-style ($font-size: $font-size-m);
+                }
+
+                p:first-child{
+                    color: $color-primary;
+                }
+
+                p:last-child {
+                    @include paragraph-style ($font-size: $font-size-s);
+                }
+            }
+
+            p {
+                @include paragraph-style ($font-size: $font-size-s);
+
+                @media #{$medium} {
+                    max-width: 80%;
+                }
+            }
+
+            .price {
+
+                h4 {
+                    padding: 30px 0 20px 0;
+                    @include heading-2 ($font-size:$font-size-l, $font-weight:700)
+                }
+
+                .addtocard {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+
+                    .count {
+                        display: flex;
+                        gap: 30px;
+                        align-items: center;
+                        border: 1px solid $color-muted;
+                        width: fit-content;
+                        height: fit-content;
+                        padding: 5px 20px;
+
+                        p:nth-child(1), p:nth-child(3) {
+                            @include paragraph-style($font-size:$font-size-l, $font-weight:600)
+                        }
+
+                        p:nth-child(2) {
+                            @include paragraph-style($font-size:$font-size-s)
+                        }
+                    }
+
+                    button {
+                        @include button-base ($width: 100%);
+                    }
+
+                    @media #{$medium} {
+                        flex-direction: row;
+                        align-items: center;
+                    }
+
+                }
+
+
+                @media #{$medium} {
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+                    padding-top: 30px;
+
+                    h4 {
+                        padding: 0;
+                    }
+
+                    button{
+                        @include button-base ($width: fit-content);
+                    }
+                }
+
+                @media #{$large} {
+                    gap: 15px;
+                }
+            }
+        }
+
+        @media #{$large} {
+            .ref2 {
+                display: flex;
+                justify-content: space-between;
+                padding-bottom: 40px;
+
+                p {
+                    color: $color-hover;
+                }
+
+                div {
+                    display: flex;
+                    gap: 20px;
+
+                    img {
+                        width: 26px;
+                    }
+                }
+
+            }
+        }
+
+    }
+
+    .details {
+        background-color: $color-bg-secondary;
+        padding: 40px 20px;
+
+        .wine-characteristics {
+
+            h4 {
+                color: $color-muted;
+                padding-bottom: 10px;
+            }
+
+            div {
+                display: flex;
+                align-items: center;
+                padding: 10px 0;
+                gap: 8px;
+
+                svg {
+                    path {
+                        fill: $color-primary;
+                    }
+                }
+            }
+
+            @media #{$medium} {
+                display: none;
+            }  
+        }
+
+        .flow-temperature {
+            padding-top: 30px;
+            display: flex;
+            flex-direction: column;
+
+
+            h4 {
+                color: $color-muted;
+                padding-bottom: 10px;
+            }
+
+            h3 {
+                @include heading-3 ($font-size:$font-size-l, $font-weight:500);
+
+                @media #{$large} {
+                    @include heading-3 ($font-size:$font-size-lg, $font-weight:600);
+                }
+            }
+
+            .food-combinations {
+                padding-top: 40px;
+                display: grid;
+                gap: 15px;
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
+                div {
+                    display: flex;
+                    align-items: center;
+                    gap: 14px;
+                    width: fit-content;
+
+                    p{
+                        @include paragraph-style ($font-size:$font-size-s, $font-weight:600);
+                    }
+                }
+            }
+
+            @media #{$medium} {
+                justify-content: space-between;    
+            }
+
+        }
+
+        .tasting-notes {
+            padding: 40px 0;
+
+            h3 {
+                @include heading-3 ($font-size:$font-size-l, $font-weight:500)
+            }
+
+            p{
+                padding-top: 20px;
+                @include paragraph-style ($font-size:$font-size-s)
+            }
+
+        }
+
+        .technical-details {
+            h3 {
+                padding-bottom: 20px;
+                @include heading-3 ($font-size:$font-size-l, $font-weight:500)
+            }
+
+            .list {
+                div {
+                    display: flex;
+                    align-items: center;
+                    gap: 16px;
+                    padding: 8px 0;
+                    
+                    div{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: start;
+                        gap: 2px;
+
+                        p:last-child {
+                            @include paragraph-style ($font-weight:800)
+                        }
+                    }
+                }
+            }
+        }
+
+        @media #{$medium} {
+            display: flex;
+            justify-content: space-between;
+
+            .right-column {
+                width: 60%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+            .tasting-notes {
+                padding-top: 30px;
+            }
+
+            .technical-details {
+
+                .list {
+                    display: grid;
+                    gap: 10px;
+                    grid-template-columns: 1fr 1fr;                    
+                    div {
+                        gap: 8px;
+                        padding: 0;
+                    }
+                }
+            }
+        }  
+
+        @media #{$large} {
+            height: 450px;
+            margin-top: -40px;
+            padding: 40px 80px;
+
+            .right-column {
+                width: 50%;
+            }
+        }
+    }
+
+    .other-choices {
+        padding: 60px 20px;
+        
+        h1 {
+            @include heading-1($font-size: $font-size-xxl, $font-weight: 600)
+        }
+
+        .store-list {
+            display: flex; 
+            overflow-x: auto; 
+            -webkit-overflow-scrolling: touch; 
+            padding: 10px; 
+            gap: 20px;
+            padding-top: 40px;
+
+
+
+            
+            .wine-card {
+                flex-shrink: 0;
+                width: 250px; 
+                padding-bottom: 15px;
+            }
+
+            &::-webkit-scrollbar {
+                display: none; 
+            }
+        }
+
+        @media #{$large} {
+            padding: 60px 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+
+            .store-list {
+                gap: 40px;
+            }
+            
+        }
+    }
+
+    @media #{$large} {
+        .product-intro {
+            .ref {
+                display: none;
+            }
+        }
+    }
+}

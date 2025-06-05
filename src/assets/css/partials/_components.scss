@@ -2,49 +2,18 @@
 // Button Base Styles
 // ------------------------------------
 
-@mixin button-base {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 20px;
+@mixin button-base ($width: $width-x) {
+  font-family: Inter, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  padding: 12px 28px;
+  background-color: black;
+  color: white;
   border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-family: Arial, sans-serif;
-  font-size: 1rem;
-  font-weight: bold;
-  text-decoration: none;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-// ------------------------------------
-// Button Variants  
-// ------------------------------------
-
-@mixin button-primary {
-  @include button-base; 
-  background-color: #007bff; 
-  color: #fff;
+  width: $width;
 
   &:hover {
-    background-color: #0056b3;
-  }
-
-  &:active {
-    background-color: #004085;
-  }
-}
-
-@mixin button-secondary {
-  @include button-base;
-  background-color: #6c757d;
-  color: #fff;
-
-  &:hover {
-    background-color: #5a6268;
-  }
-
-  &:active {
-    background-color: #495057;
+    background-color: $color-primary;
+    cursor: pointer;
   }
 }

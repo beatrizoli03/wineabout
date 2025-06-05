@@ -70,6 +70,7 @@ header {
         padding: 80px 40px;
         transition: right 0.3s ease; 
         z-index: 1; 
+        box-shadow: 0 1px 2px 0 $color-hover2;
 
         ul {
             padding: 0; 
@@ -101,20 +102,38 @@ header {
             display: flex; 
             flex-direction: row-reverse;
             justify-content: start;
-            align-items: start;
+            align-items: center;
             padding-bottom: 20px;
             gap: 8px; 
             cursor: pointer;
             color: $color-text;
             font-size: $font-size-l;
-            transition: color 0.3s ease;
+
+            svg {
+                width: 20px;
+            }
 
             p {
-                font-size: $font-size-m; 
-
-                &:hover {
-                color: $color-hover;
+                font-size: $font-size-s; 
             }
+            &:hover {
+                a:nth-child(1), a:nth-child(2), a:nth-child(3) {
+                    svg {
+                        stroke: $color-hover;
+                        fill: none;
+                    }
+                }
+
+                a:nth-child(4) {
+                    svg{
+                        stroke: none;
+                        fill: $color-hover;
+                    }
+                }
+
+                p{
+                    color: $color-hover;
+                }
             }
         }
     }

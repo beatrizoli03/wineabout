@@ -98,6 +98,8 @@ header .off-screen-menu {
   -webkit-transition: right 0.3s ease;
   transition: right 0.3s ease;
   z-index: 1;
+  -webkit-box-shadow: 0 1px 2px 0 #D4D4D4;
+          box-shadow: 0 1px 2px 0 #D4D4D4;
 }
 header .off-screen-menu ul {
   padding: 0;
@@ -136,21 +138,30 @@ header .off-screen-menu .close-menu-links {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: start;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding-bottom: 20px;
   gap: 8px;
   cursor: pointer;
   color: black;
   font-size: 1.5rem;
-  -webkit-transition: color 0.3s ease;
-  transition: color 0.3s ease;
+}
+header .off-screen-menu .close-menu-links svg {
+  width: 20px;
 }
 header .off-screen-menu .close-menu-links p {
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
-header .off-screen-menu .close-menu-links p:hover {
+header .off-screen-menu .close-menu-links:hover a:nth-child(1) svg, header .off-screen-menu .close-menu-links:hover a:nth-child(2) svg, header .off-screen-menu .close-menu-links:hover a:nth-child(3) svg {
+  stroke: #a5a5a5;
+  fill: none;
+}
+header .off-screen-menu .close-menu-links:hover a:nth-child(4) svg {
+  stroke: none;
+  fill: #a5a5a5;
+}
+header .off-screen-menu .close-menu-links:hover p {
   color: #a5a5a5;
 }
 header .off-screen-menu.active {
@@ -825,7 +836,6 @@ p {
   margin: 0px 0;
 }
 .explore div button {
-  margin-top: 20px;
   font-family: Inter, sans-serif;
   font-size: 0.875rem;
   font-weight: 400;
@@ -836,6 +846,7 @@ p {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  margin-top: 20px;
 }
 .explore div button:hover {
   background-color: #942A50;
@@ -882,17 +893,16 @@ p {
           align-items: center;
 }
 .wine-shop div button {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  margin-top: 8px;
-  font-family: "Inter", sans-serif, sans-serif;
+  font-family: Inter, sans-serif;
   font-size: 0.875rem;
   font-weight: 400;
   padding: 12px 28px;
   background-color: black;
   color: white;
   border: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 .wine-shop div button:hover {
   background-color: #942A50;
@@ -1230,15 +1240,13 @@ p {
   gap: 8px;
   /* Linha de fundo (não preenchida) */
   /* Parte azul (preenchida) */
-  /* "Truque" para a parte azul (só funciona com WebKit) */
-  /* Firefox */
 }
 .store .filters-sidebar .price-range .slider {
   -webkit-appearance: none;
   width: 100%;
   height: 6px;
   margin: 0;
-  background: transparent; /* necessário para customização */
+  background: transparent;
 }
 .store .filters-sidebar .price-range .slider::-webkit-slider-runnable-track {
   height: 3px;
@@ -1259,23 +1267,6 @@ p {
 .store .filters-sidebar .price-range .slider::-webkit-slider-runnable-track {
   background: -webkit-gradient(linear, left top, right top, from(#942A50), color-stop(50%, #942A50), color-stop(50%, #C994A7), color-stop(50%, #C994A7));
   background: linear-gradient(to right, #942A50 0%, #942A50 50%, #C994A7 50%, #C994A7 50%);
-}
-.store .filters-sidebar .price-range .slider::-moz-range-track {
-  background: #ccc;
-  height: 6px;
-  border-radius: 3px;
-}
-.store .filters-sidebar .price-range .slider::-moz-range-progress {
-  background: #942A50;
-  height: 6px;
-  border-radius: 3px;
-}
-.store .filters-sidebar .price-range .slider::-moz-range-thumb {
-  background: #942A50;
-  border: none;
-  border-radius: 50%;
-  height: 16px;
-  width: 16px;
 }
 .store .filters-sidebar .price-range div {
   display: -webkit-box;
@@ -1311,14 +1302,28 @@ p {
   .store .filters-sidebar {
     display: none;
     right: 0;
+    min-width: 150px;
   }
 }
 @media (min-width: 1024px) {
   .store {
     padding: 0px 80px 80px 80px;
+    width: calc(100% - 160px);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
   .store .filters-sidebar {
-    display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     right: 0;
   }
 }
@@ -1340,6 +1345,15 @@ p {
     grid-template-columns: 1fr 1fr 1fr;
     padding: 0px 40px 80px 40px;
   }
+}
+@media (min-width: 1024px) {
+  .store-list {
+    padding: 0 0 0 40px;
+  }
+}
+.store-list a {
+  cursor: pointer;
+  text-decoration: none;
 }
 .store-list .wine-card {
   display: -webkit-box;
@@ -1731,23 +1745,708 @@ p {
   color: black;
 }
 .contact-form-container .contact-form form button {
-  background-color: black;
-  text-transform: uppercase;
-  padding: 12px 24px;
-  border: none;
-  cursor: pointer;
-  font-family: "Inter", sans-serif;
+  font-family: Inter, sans-serif;
   font-size: 0.875rem;
   font-weight: 400;
-  line-height: 130%;
-  margin: 0;
+  padding: 12px 28px;
+  background-color: black;
   color: white;
+  border: none;
+  width: 100%;
+}
+.contact-form-container .contact-form form button:hover {
+  background-color: #942A50;
+  cursor: pointer;
 }
 @media (min-width: 600px) {
   .contact-form-container .contact-form form button {
     padding: 16px 24px;
   }
 }
-.contact-form-container .contact-form form button:hover {
+
+main {
+  padding-top: 75px;
+}
+main .ref {
+  padding: 20px 20px 0 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+main .ref p {
+  color: #a5a5a5;
+}
+main .ref div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+}
+main .ref div img {
+  width: 26px;
+}
+@media (min-width: 600px) {
+  main .ref {
+    padding-top: 50px;
+  }
+}
+@media (min-width: 1024px) {
+  main .product-intro {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 15px;
+    padding: 0 80px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  main .product-intro .product-hero {
+    width: 50%;
+  }
+  main .product-intro .product-tittle {
+    width: 50%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  main .product-intro .product-tittle .local {
+    padding: 0;
+  }
+  main .product-intro .product-tittle .tittle {
+    padding: 0;
+  }
+}
+main .product-hero {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+main .product-hero .map {
+  padding-top: 25px;
+  display: none;
+}
+@media (min-width: 1024px) {
+  main .product-hero .map {
+    width: 40%;
+  }
+}
+main .product-hero .map .local1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 15px;
+  padding: 20px 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media (min-width: 1024px) {
+  main .product-hero .map .local1 {
+    padding-left: 0;
+  }
+}
+main .product-hero .map .local1 img {
+  width: 35px;
+}
+main .product-hero .map .local1 p:nth-child(1) {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 130%;
+  margin: 0;
+  color: black;
+}
+main .product-hero .map .local1 p:nth-child(2) {
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 130%;
+  margin: 0;
+  color: #8a8180;
+}
+main .product-hero .map img:nth-child(2) {
+  padding-left: 60px;
+}
+@media (min-width: 1024px) {
+  main .product-hero .map img:nth-child(2) {
+    padding-left: 40px;
+  }
+}
+main .product-hero .map .wine-characteristics {
+  padding-left: 20px;
+  padding-top: 30px;
+}
+@media (min-width: 1024px) {
+  main .product-hero .map .wine-characteristics {
+    padding-left: 0;
+  }
+}
+main .product-hero .map .wine-characteristics div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 8px;
+  padding-bottom: 10px;
+}
+main .product-hero .map .wine-characteristics div p {
+  color: #D4D4D4;
+}
+main .product-hero .map .wine-characteristics div path {
+  fill: #D4D4D4;
+}
+main .product-hero .map .wine-characteristics div:last-child {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+}
+main .product-hero .map .wine-characteristics div:last-child svg {
+  width: 37px;
+  padding-left: 2px;
+}
+@media (min-width: 600px) {
+  main .product-hero .map {
+    display: block;
+    max-width: 30%;
+  }
+}
+main .product-hero .produto-image {
+  position: relative;
+  width: 100%;
+  min-width: 100px;
+  height: 500px;
+  overflow: hidden;
+}
+main .product-hero .produto-image img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: 1;
+  display: block;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+main .product-hero .produto-image div {
+  width: 200px;
+  height: 200px;
+  border-radius: 9999px;
+  background: #FF3366;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 0;
+}
+main .product-tittle .ref2 {
+  display: none;
+}
+main .product-tittle .local {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 15px;
+  padding: 20px 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media (min-width: 600px) {
+  main .product-tittle .local {
+    padding: 5px 20px;
+  }
+}
+main .product-tittle .local img {
+  width: 35px;
+}
+@media (min-width: 600px) {
+  main .product-tittle .local img {
+    display: none;
+  }
+}
+main .product-tittle .local p:nth-child(1) {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 130%;
+  margin: 0;
+  color: black;
+}
+@media (min-width: 600px) {
+  main .product-tittle .local p:nth-child(1) {
+    display: none;
+  }
+}
+main .product-tittle .local p:nth-child(2) {
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 130%;
+  margin: 0;
+  color: #8a8180;
+}
+@media (min-width: 600px) {
+  main .product-tittle .local p:nth-child(2) {
+    display: none;
+  }
+}
+main .product-tittle .local p:nth-child(3) {
+  display: none;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 130%;
+  margin: 0;
+  color: #8a8180;
+}
+@media (min-width: 600px) {
+  main .product-tittle .local p:nth-child(3) {
+    display: block;
+  }
+}
+main .product-tittle .tittle {
+  padding: 0 20px 40px 20px;
+}
+main .product-tittle .tittle h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0;
+  color: black;
+}
+main .product-tittle .tittle .stars {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px 0 30px 0;
+}
+main .product-tittle .tittle .stars p {
+  font-family: "Inter", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 130%;
+  margin: 0;
+  color: black;
+}
+main .product-tittle .tittle .stars p:first-child {
+  color: #942A50;
+}
+main .product-tittle .tittle .stars p:last-child {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 130%;
+  margin: 0;
+  color: black;
+}
+main .product-tittle .tittle p {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 130%;
+  margin: 0;
+  color: black;
+}
+@media (min-width: 600px) {
+  main .product-tittle .tittle p {
+    max-width: 80%;
+  }
+}
+main .product-tittle .tittle .price h4 {
+  padding: 30px 0 20px 0;
+  font-family: "Inter", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+  color: black;
+}
+main .product-tittle .tittle .price .addtocard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+}
+main .product-tittle .tittle .price .addtocard .count {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 30px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid #8a8180;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 5px 20px;
+}
+main .product-tittle .tittle .price .addtocard .count p:nth-child(1), main .product-tittle .tittle .price .addtocard .count p:nth-child(3) {
+  font-family: "Inter", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 130%;
+  margin: 0;
+  color: black;
+}
+main .product-tittle .tittle .price .addtocard .count p:nth-child(2) {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 130%;
+  margin: 0;
+  color: black;
+}
+main .product-tittle .tittle .price .addtocard button {
+  font-family: Inter, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  padding: 12px 28px;
+  background-color: black;
+  color: white;
+  border: none;
+  width: 100%;
+}
+main .product-tittle .tittle .price .addtocard button:hover {
   background-color: #942A50;
+  cursor: pointer;
+}
+@media (min-width: 600px) {
+  main .product-tittle .tittle .price .addtocard {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+@media (min-width: 600px) {
+  main .product-tittle .tittle .price {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 20px;
+    padding-top: 30px;
+  }
+  main .product-tittle .tittle .price h4 {
+    padding: 0;
+  }
+  main .product-tittle .tittle .price button {
+    font-family: Inter, sans-serif;
+    font-size: 0.875rem;
+    font-weight: 400;
+    padding: 12px 28px;
+    background-color: black;
+    color: white;
+    border: none;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  main .product-tittle .tittle .price button:hover {
+    background-color: #942A50;
+    cursor: pointer;
+  }
+}
+@media (min-width: 1024px) {
+  main .product-tittle .tittle .price {
+    gap: 15px;
+  }
+}
+@media (min-width: 1024px) {
+  main .product-tittle .ref2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding-bottom: 40px;
+  }
+  main .product-tittle .ref2 p {
+    color: #a5a5a5;
+  }
+  main .product-tittle .ref2 div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 20px;
+  }
+  main .product-tittle .ref2 div img {
+    width: 26px;
+  }
+}
+main .details {
+  background-color: #F7F7F7;
+  padding: 40px 20px;
+}
+main .details .wine-characteristics h4 {
+  color: #8a8180;
+  padding-bottom: 10px;
+}
+main .details .wine-characteristics div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px 0;
+  gap: 8px;
+}
+main .details .wine-characteristics div svg path {
+  fill: #942A50;
+}
+@media (min-width: 600px) {
+  main .details .wine-characteristics {
+    display: none;
+  }
+}
+main .details .flow-temperature {
+  padding-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+main .details .flow-temperature h4 {
+  color: #8a8180;
+  padding-bottom: 10px;
+}
+main .details .flow-temperature h3 {
+  font-family: "Inter", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0;
+  color: black;
+}
+@media (min-width: 1024px) {
+  main .details .flow-temperature h3 {
+    font-family: "Inter", sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0;
+    color: black;
+  }
+}
+main .details .flow-temperature .food-combinations {
+  padding-top: 40px;
+  display: -ms-grid;
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+main .details .flow-temperature .food-combinations div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 14px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+main .details .flow-temperature .food-combinations div p {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 130%;
+  margin: 0;
+  color: black;
+}
+@media (min-width: 600px) {
+  main .details .flow-temperature {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+main .details .tasting-notes {
+  padding: 40px 0;
+}
+main .details .tasting-notes h3 {
+  font-family: "Inter", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0;
+  color: black;
+}
+main .details .tasting-notes p {
+  padding-top: 20px;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 130%;
+  margin: 0;
+  color: black;
+}
+main .details .technical-details h3 {
+  padding-bottom: 20px;
+  font-family: "Inter", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0;
+  color: black;
+}
+main .details .technical-details .list div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 16px;
+  padding: 8px 0;
+}
+main .details .technical-details .list div div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  gap: 2px;
+}
+main .details .technical-details .list div div p:last-child {
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 800;
+  line-height: 130%;
+  margin: 0;
+  color: black;
+}
+@media (min-width: 600px) {
+  main .details {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  main .details .right-column {
+    width: 60%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  main .details .tasting-notes {
+    padding-top: 30px;
+  }
+  main .details .technical-details .list {
+    display: -ms-grid;
+    display: grid;
+    gap: 10px;
+    -ms-grid-columns: 1fr 10px 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+  main .details .technical-details .list div {
+    gap: 8px;
+    padding: 0;
+  }
+}
+@media (min-width: 1024px) {
+  main .details {
+    height: 450px;
+    margin-top: -40px;
+    padding: 40px 80px;
+  }
+  main .details .right-column {
+    width: 50%;
+  }
+}
+main .other-choices {
+  padding: 60px 20px;
+}
+main .other-choices h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin: 0;
+  color: black;
+}
+main .other-choices .store-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 10px;
+  gap: 20px;
+  padding-top: 40px;
+}
+main .other-choices .store-list .wine-card {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 250px;
+  padding-bottom: 15px;
+}
+main .other-choices .store-list::-webkit-scrollbar {
+  display: none;
+}
+@media (min-width: 1024px) {
+  main .other-choices {
+    padding: 60px 80px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  main .other-choices .store-list {
+    gap: 40px;
+  }
+}
+@media (min-width: 1024px) {
+  main .product-intro .ref {
+    display: none;
+  }
 }
