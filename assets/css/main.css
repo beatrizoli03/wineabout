@@ -1164,6 +1164,7 @@ p {
       -ms-flex-align: center;
           align-items: center;
   gap: 10px;
+  position: relative;
 }
 .store-filters .sort-by h4 {
   color: black;
@@ -1197,13 +1198,14 @@ p {
   display: none;
   position: absolute;
   top: 100%;
-  left: -20px;
+  left: 0;
   background-color: white;
   min-width: 160px;
   border: none;
   padding: 5px 10px;
   margin: 0;
-  z-index: 1000;
+  -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 .store-filters .sort-by div ul li {
   list-style: none;
